@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from werkzeug import secure_filename
 import os
 
@@ -22,5 +22,15 @@ def upload_file_fxn():
       print("File Saved successfully") # yaha pe 
       return "File Saved Successfully"
 		
+
+@app.route('/loadedfiles', methods = ['GET'])
+def loadedfiles():
+   csv_files = []
+   for filename in os.listdir("/home/pi/Desktop/AFKZenCoders/PS12/uploads/"):
+      if filename.endswith(".csv"):
+         csv_files.append(filename)
+   return jsonify({'CSV files':csv_files})
+
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port = 1313,debug = True)
