@@ -33,3 +33,66 @@ journal file ban gyi xD
 chal abb tu ja ,, mai code clean krke push kr deta hu
 
 gunnite bhai 
+
+
+knsi??
+
+ham ye consider karnege ki - it is from AIRTEL (demo purposes ke liye bhut hai, into sach me ispe kuch banwana hoga toh they will contact us for the same ki ,, alag alag ISP ka banao)
+
+haan sahi hai .. 
+haan
+
+ye data hai na 
+bas ye data saath me diya jaega
+ki yahi use kro
+
+tumne hamko nhi diya 
+hamne ispe banaya hai 
+yahi chalega xD
+
+hnhn
+CGI
+
+nhi pta
+hn hn
+
+oh..............
+haan............
+tower switch..
+oh haaaan..
+smjha..
+toh do alag feild kyu nhi de dete?
+is same table me 
+accha
+
+smjhgya 
+toh CGI??
+hn..
+oh 
+
+eek alag table 
+seperate table hogi 
+haan sahi hai 
+kar lenge integrate usse bhi
+hamare paas nhi hai 
+toh ham nhi banaenge , but we will mention it in report ki agar CGI ho toh development uske hisaab se hoga ki location bhi ho jae 
+
+haan
+
+
+arya ne toh API me guide kiya
+sachin bhi saath hi tha 
+shantanu apne map wale concepts brushup kar rha 
+taki jab ham use data de 
+uska representation kar de wo
+
+17 tak final karna hai 
+matlab kal tab API ka khtm
+
+fir kal queries likhni padegi 
+alag alag filters ke hissab se
+
+host karke 
+filezilla dedu ??
+
+wait then ,
