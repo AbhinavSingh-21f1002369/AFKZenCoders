@@ -23,9 +23,13 @@ def addData(CSVpath):
     )""")
 
     with open(CSVpath) as csv_file:
+        count = 0
         csv_reader = csv.reader(csv_file, delimiter=',')
         for row in csv_reader:
-            # print(row) # row is a list, yes yes yes
+            if count == 0:
+                count+=1
+                continue
+            print(row) # row is a list, yes yes yes
             calling_number=row[0]
             called_number=row[1]
             date=row[2]
@@ -43,5 +47,3 @@ def addData(CSVpath):
             conn.commit()
 
     conn.close()
-
-addData("/home/pi/Desktop/AFKZenCoders/PS12/uploads/CDR1.csv")
