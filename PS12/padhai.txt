@@ -1,0 +1,35 @@
+OperationalError: table CallData has no column named called_number 
+
+isko table hi nhi mili 
+
+table mili toh column nhi mila ,, means creation query error , koi space chut gya ig
+
+beauty OP
+aab agar same function alag alag CSV ke saath call hoga toh agar DROP na kare , toh yahi database lamba hota jaega right?
+
+i guess maane eek csv load kari
+, fir dusri kari , fir tisri,, 
+
+then hamne eek hi table me sara data daal diya 
+calculation OP
+
+fir bande ke saamne option de denge clear dataset karke .. it will delete data table 
+
+ahaan...
+hmm...
+abhi itna krte hain 
+
+congo
+
+haan eek chez check krke sota hun
+tu ja
+
+what if fxn dubara run ho?
+redundancy?
+
+xD
+
+journal file ban gyi xD
+chal abb tu ja ,, mai code clean krke push kr deta hu
+
+gunnite bhai 

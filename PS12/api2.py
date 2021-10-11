@@ -17,7 +17,9 @@ def upload_file_fxn():
       file = request.files['file']
       filename = secure_filename(file.filename)
       file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-      print("File Saved successfully")
+      # path_of_csv = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+      # addData(path_of_CSV)
+      print("File Saved successfully") # yaha pe 
       return "File Saved Successfully"
 		
 if __name__ == "__main__":
