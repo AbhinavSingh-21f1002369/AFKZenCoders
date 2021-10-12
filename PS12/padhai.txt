@@ -96,3 +96,17 @@ host karke
 filezilla dedu ??
 
 wait then ,
+
+
+
+from time import strptime
+
+def change_date(bad_time:str):
+  day,month,year=bad_time.split('-')
+  month=strptime(month,'%b').tm_mon
+  return f"{year}-{month}-{day}"
+
+
+i="1-Jan-2021"
+print(change_date(i))
+

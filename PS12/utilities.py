@@ -5,8 +5,8 @@ def addData(CSVpath):
     conn = sqlite3.connect("CDRdata.db")
     cur = conn.cursor()
 
-    cur.execute(" DROP TABLE IF EXISTS CallData")
-    cur.execute("""CREATE TABLE "CallData" (
+    #cur.execute(" DROP TABLE IF EXISTS CallData")
+    cur.execute("""CREATE TABLE IF NOT EXISTS 'CallData' (
     "calling_number" TEXT,
     "called_number" TEXT,
     "date" TEXT,
@@ -29,7 +29,7 @@ def addData(CSVpath):
             if count == 0:
                 count+=1
                 continue
-            print(row) # row is a list, yes yes yes
+            #print(row) # row is a list, yes yes yes
             calling_number=row[0]
             called_number=row[1]
             date=row[2]
