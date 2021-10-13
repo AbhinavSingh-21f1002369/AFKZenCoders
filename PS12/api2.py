@@ -6,30 +6,100 @@ app = Flask(__name__)
 UPLOAD_FOLDER = '/home/pi/Desktop/AFKZenCoders/PS12/uploads/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-
 @app.route('/upload')
 def upload_file():
    return render_template('upload.html')
 	
-@app.route('/uploader', methods = ['GET', 'POST'])
-def upload_file_fxn():
+@app.route('/uploader/cdr', methods = ['GET', 'POST'])
+def upload_cdr_fxn():
    if request.method == 'POST':
       # Getting the File
       file = request.files['file']
       filename = secure_filename(file.filename)
-
       # Path for file 
       path_of_csv = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-
       # Saving File
       file.save(path_of_csv)
-      print("File Saved successfully")
-
+      print("CDR File Saved successfully")
       # Loading File To Database
-      utilities.addData(path_of_csv)
+      utilities.addCDRData(path_of_csv)
+      return "CDR File Saved and Loaded to Database Successfully"
 
-      return "File Saved and Loaded to Database Successfully"
-		
+@app.route('/uploader/thana', methods = ['GET', 'POST'])
+def upload_thana_fxn():
+   if request.method == 'POST':
+      # Getting the File
+      file = request.files['file']
+      filename = secure_filename(file.filename)
+      # Path for file 
+      path_of_csv = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+      # Saving File
+      file.save(path_of_csv)
+      print("Thana File Saved successfully")
+      # Loading File To Database
+      utilities.addThanaData(path_of_csv)
+      return "Thana File Saved and Loaded to Database Successfully"
+
+@app.route('/uploader/bankacc', methods = ['GET', 'POST'])
+def upload_bankacc_fxn():
+   if request.method == 'POST':
+      # Getting the File
+      file = request.files['file']
+      filename = secure_filename(file.filename)
+      # Path for file 
+      path_of_csv = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+      # Saving File
+      file.save(path_of_csv)
+      print("BankAcc File Saved successfully")
+      # Loading File To Database
+      utilities.addBankData(path_of_csv)
+      return "BankAcc File Saved and Loaded to Database Successfully"
+
+@app.route('/uploader/cgi', methods = ['GET', 'POST'])
+def upload_cgi_fxn():
+   if request.method == 'POST':
+      # Getting the File
+      file = request.files['file']
+      filename = secure_filename(file.filename)
+      # Path for file 
+      path_of_csv = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+      # Saving File
+      file.save(path_of_csv)
+      print("CGI File Saved successfully")
+      # Loading File To Database
+      utilities.addCGIData(path_of_csv)
+      return "CGI File Saved and Loaded to Database Successfully"
+
+@app.route('/uploader/fir', methods = ['GET', 'POST'])
+def upload_fir_fxn():
+   if request.method == 'POST':
+      # Getting the File
+      file = request.files['file']
+      filename = secure_filename(file.filename)
+      # Path for file 
+      path_of_csv = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+      # Saving File
+      file.save(path_of_csv)
+      print("FIR File Saved successfully")
+      # Loading File To Database
+      utilities.addFIRData(path_of_csv)
+      return "FIR File Saved and Loaded to Database Successfully"
+
+@app.route('/uploader/thanalist', methods = ['GET', 'POST'])
+def upload_thanalist_fxn():
+   if request.method == 'POST':
+      # Getting the File
+      file = request.files['file']
+      filename = secure_filename(file.filename)
+      # Path for file 
+      path_of_csv = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+      # Saving File
+      file.save(path_of_csv)
+      print("Thana List File Saved successfully")
+      # Loading File To Database
+      utilities.addthanaListData(path_of_csv)
+      return "Thana File Saved and Loaded to Database Successfully"
+
 @app.route('/loadedfiles', methods = ['GET'])
 def loadedfiles():
    csv_files = []
