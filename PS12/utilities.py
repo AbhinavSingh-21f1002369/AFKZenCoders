@@ -1,5 +1,6 @@
 import csv
 import sqlite3
+import logger
 
 def convdate(data,time):
   data = data.lower().split("-")
@@ -76,7 +77,7 @@ def addThanaData(CSVpath):
             thana=row[2]
             cur.execute("INSERT INTO Thana (DISTRICT_ID,THANA_ID,THANA) VALUES (?,?,?)",(district_id,thana_id,thana))
             conn.commit()
-
+    logger.logit("| ThanaData added to Database")
     conn.close()
 
 def addCDRData(CSVpath):
@@ -125,7 +126,7 @@ def addCDRData(CSVpath):
             roam_nw=row[12]
             cur.execute("INSERT INTO CallData (calling_number,called_number,start_time,end_time,duration,cell1,cell2,cell_type,imei,imsi,smsc,roam_nw) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",(calling_number,called_number,start_time,end_time,duration,cell1,cell2,cell_type,imei,imsi,smsc,roam_nw))
             conn.commit()
-
+    logger.logit("| CDRData added to Database")
     conn.close()
 
 def addBankData(CSVpath):
@@ -159,7 +160,7 @@ def addBankData(CSVpath):
 
             cur.execute("INSERT INTO BankData (AC_Number, Aadhar_Number, Name, Bank_Name, Mobile_Number, Branch_City) VALUES (?,?,?,?,?,?)",(account, aadhar, name, bank_name, mobile_number, branch_city))
             conn.commit()
-
+    logger.logit("| BankData added to Database")
     conn.close()
 
 def addCGIData(CSVpath):
@@ -181,6 +182,7 @@ def addCGIData(CSVpath):
             Address=row[1]
             cur.execute("INSERT INTO CGI (Cell_ID,Address) VALUES (?,?)",(Cell_ID,Address))
             conn.commit()
+    logger.logit("| CGIData added to Database")
     conn.close()
 
 def addFIRData(CSVpath):
@@ -214,6 +216,7 @@ def addFIRData(CSVpath):
             Mobile_No_of_Complaint=row[8]
             cur.execute("INSERT INTO FIR (FIR_No,District,Police_Station_ID,Time,Complaint,Act,Section,Mobile_No_of_Complaint) VALUES (?,?,?,?,?,?,?,?)",(FIR_No,District,Police_Station_ID,Time,Complaint,Act,Section,Mobile_No_of_Complaint))
             conn.commit()
+    logger.logit("| FIRData added to Database")
     conn.close()
 
 def addthanaListData(CSVpath):
@@ -237,4 +240,5 @@ def addthanaListData(CSVpath):
             State=row[2]
             cur.execute("INSERT INTO ThanaList (District_ID,District,State) VALUES (?,?,?)",(District_ID,District,State))
             conn.commit()
+    logger.logit("| ThanaListData added to Database")
     conn.close()
