@@ -113,3 +113,4 @@ print(change_date(i))
 
 
 1 - SELECT * FROM CallData ORDER BY duration DESC
+2 - SELECT * FROM CallData WHERE start_time > {till} AND start_time < {since};
