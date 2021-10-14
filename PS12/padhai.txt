@@ -110,3 +110,6 @@ def change_date(bad_time:str):
 i="1-Jan-2021"
 print(change_date(i))
 
+
+
+1 - SELECT * FROM CallData ORDER BY duration DESC

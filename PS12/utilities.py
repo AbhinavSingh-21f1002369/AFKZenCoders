@@ -53,7 +53,7 @@ def convdur(time):
     return seconds
 
 def addThanaData(CSVpath):
-    conn = sqlite3.connect("CDRdata.db")
+    conn = sqlite3.connect("/home/pi/Desktop/AFKZenCoders/PS12/CDRdata.db")
     cur = conn.cursor()
 
     #cur.execute(" DROP TABLE IF EXISTS CallData")
@@ -80,7 +80,7 @@ def addThanaData(CSVpath):
     conn.close()
 
 def addCDRData(CSVpath):
-    conn = sqlite3.connect("CDRdata.db")
+    conn = sqlite3.connect("/home/pi/Desktop/AFKZenCoders/PS12/CDRdata.db")
     cur = conn.cursor()
 
     #cur.execute(" DROP TABLE IF EXISTS CallData")
@@ -129,7 +129,7 @@ def addCDRData(CSVpath):
     conn.close()
 
 def addBankData(CSVpath):
-    conn = sqlite3.connect("CDRdata.db")
+    conn = sqlite3.connect("/home/pi/Desktop/AFKZenCoders/PS12/CDRdata.db")
     cur = conn.cursor()
 
     #cur.execute(" DROP TABLE IF EXISTS CallData")
@@ -163,7 +163,7 @@ def addBankData(CSVpath):
     conn.close()
 
 def addCGIData(CSVpath):
-    conn = sqlite3.connect("CDRdata.db")
+    conn = sqlite3.connect("/home/pi/Desktop/AFKZenCoders/PS12/CDRdata.db")
     cur = conn.cursor()
     cur.execute("""CREATE TABLE IF NOT EXISTS 'CGI' (
     "Cell_ID" TEXT,
@@ -184,7 +184,7 @@ def addCGIData(CSVpath):
     conn.close()
 
 def addFIRData(CSVpath):
-    conn = sqlite3.connect("CDRdata.db")
+    conn = sqlite3.connect("/home/pi/Desktop/AFKZenCoders/PS12/CDRdata.db")
     cur = conn.cursor()
     cur.execute("""CREATE TABLE IF NOT EXISTS 'FIR' (
     "FIR_No" INT,
@@ -217,7 +217,7 @@ def addFIRData(CSVpath):
     conn.close()
 
 def addthanaListData(CSVpath):
-    conn = sqlite3.connect("CDRdata.db")
+    conn = sqlite3.connect("/home/pi/Desktop/AFKZenCoders/PS12/CDRdata.db")
     cur = conn.cursor()
     cur.execute("""CREATE TABLE IF NOT EXISTS 'ThanaList' (
     "District_ID" INT,

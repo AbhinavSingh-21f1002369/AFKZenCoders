@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 from werkzeug import secure_filename
 import os
-import utilities
+import utilities, queries
 app = Flask(__name__)
 UPLOAD_FOLDER = '/home/pi/Desktop/AFKZenCoders/PS12/uploads/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -99,6 +99,14 @@ def upload_thanalist_fxn():
       # Loading File To Database
       utilities.addthanaListData(path_of_csv)
       return "Thana File Saved and Loaded to Database Successfully"
+
+
+@app.route('/query/1', methods = ['GET'])
+def query_1():
+   query = "SELECT Name, Aadhar_Number, AC_Number from BankData BD, FIR F WHERE BD.Mobile_Number=F.Mobile_No_of_Complaint"
+   result = queries.runQuery(query)
+   response = {'result':result}
+   return jsonify(response)
 
 @app.route('/loadedfiles', methods = ['GET'])
 def loadedfiles():
