@@ -7,6 +7,7 @@ AFKZenCoders
  
 - [loaded files](http://iot.ccnet.in:1313/loadedfiles) - displayes the loaded in the DataBase files (CDRs)
 - [upload](http://iot.ccnet.in:1313/upload) - upload a CSV (CDR) file here and python will add it to the CDR database
+- [multi-upload](https://themedallionschool.com/abhinav/PS12/test.html) - Upload multiple files here
 > Upload CSV in [this Format](https://github.com/AbhinavSingh-21f1002369/AFKZenCoders/blob/main/PS12/static/CDR1.csv)
 - [delete loaded](http://iot.ccnet.in:1313/deleteload) - deletes the CSV files in the uploads folder and also deletes the database
 - [download db](http://iot.ccnet.in:1313/downloadfile/PS12Database.db) - downloads the db file
