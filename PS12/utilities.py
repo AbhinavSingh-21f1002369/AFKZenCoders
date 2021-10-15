@@ -116,7 +116,7 @@ def addCDRData(CSVpath):
             end_time = convdate(date,row[4])
             #end_time=row[4]
             duration = convdur(row[5])
-            print(duration)
+            #print(duration)
             cell1=row[6]
             cell2=row[7]
             cell_type=row[8]
