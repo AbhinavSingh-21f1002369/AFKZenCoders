@@ -180,10 +180,10 @@ def query_1():
 @cross_origin()
 def query_2():
    # Parsing the Headers
-   since = request.args.get('since')
-   till = request.args.get('till')
+   since = str(request.args.get('since')) + " 00:00:00"
+   till = str(request.args.get('till')) + " 23:59:59"
    headers = ["Calling Number","Called Number","Start Time","End Time","Duration(sec)","Start Tower","End Tower","Call Type","IMEI","IMSI","SMSC","Service Provider"]
-   query = f"SELECT * FROM CallData WHERE start_time < {till} AND start_time > {since};"
+   query = f'SELECT * FROM CallData WHERE start_time < "{till}" AND start_time > "{since}";'
    result = queries.runQuery(query)
    response = {'headers':headers,'rows':result}
    fString = f">>> Query 2 Call since:{since}, till:{till}"
@@ -357,7 +357,11 @@ def logs():
    with open("/home/pi/Desktop/AFKZenCoders/PS12/Logs.txt","r") as f:
       lines = f.readlines()
       f.close()
-   return jsonify({'logs':lines})
+   formated_lines = []
+   for i in range(len(lines)-1,0,-1):
+      formated_lines.append(lines[i])
+
+   return jsonify({'logs':formated_lines})
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port = 1313,debug = True)
