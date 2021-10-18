@@ -4,33 +4,35 @@ import os
 import utilities, queries
 import logger
 from flask_cors import CORS, cross_origin
-
 app = Flask(__name__)
-cors = CORS(app)
+CORS(app)
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 UPLOAD_FOLDER = '/home/pi/Desktop/AFKZenCoders/PS12/uploads/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 
+
 @app.route('/upload')
-@cross_origin()
 def upload_file():
    logger.logit("Rendered upload.html")
    return render_template('upload.html')
 
 @app.route('/uploader',methods=['GET','POST'])
-@cross_origin()
 def uploader():
    uploaded_files = request.files.getlist("file")
+   #number = request.args.get('number')
+   #number = "7982345234"
    #print(uploaded_files)
    logger.logit(f"/° Multiple Files Upload Start")
    for file in uploaded_files:
       filename = secure_filename(file.filename)
-      if filename=="CDR.csv":
+      if filename=="7982345234.csv":
          path = os.path.join(app.config['UPLOAD_FOLDER'],filename)
          file.save(path)
-         logger.logit("| CDRData Saved")
-         utilities.addCDRData(path)
+         number = filename[0:9]
+         logger.logit(f"| CDRData Saved {number}")
+         utilities.addCDRData(path,number)
       elif filename=="CGI_Dataset.csv":
          path = os.path.join(app.config['UPLOAD_FOLDER'],filename)
          file.save(path)
@@ -64,11 +66,11 @@ def uploader():
    return "OK"
 	
 @app.route('/uploader/cdr', methods = ['GET', 'POST'])
-@cross_origin()
 def upload_cdr_fxn():
    if request.method == 'POST':
       # Getting the File
       file = request.files['file']
+      number = request.files['number']
       filename = secure_filename(file.filename)
       # Path for file 
       path_of_csv = os.path.join(app.config['UPLOAD_FOLDER'], filename)
@@ -77,11 +79,10 @@ def upload_cdr_fxn():
       logger.logit("CDRData Saved")
       print("CDR File Saved successfully")
       # Loading File To Database
-      utilities.addCDRData(path_of_csv)
+      utilities.addCDRData(path_of_csv,number)
       return "CDR File Saved and Loaded to Database Successfully"
 
 @app.route('/uploader/thana', methods = ['GET', 'POST'])
-@cross_origin()
 def upload_thana_fxn():
    if request.method == 'POST':
       # Getting the File
@@ -98,7 +99,6 @@ def upload_thana_fxn():
       return "Thana File Saved and Loaded to Database Successfully"
 
 @app.route('/uploader/bankacc', methods = ['GET', 'POST'])
-@cross_origin()
 def upload_bankacc_fxn():
    if request.method == 'POST':
       # Getting the File
@@ -115,7 +115,6 @@ def upload_bankacc_fxn():
       return "BankAcc File Saved and Loaded to Database Successfully"
 
 @app.route('/uploader/cgi', methods = ['GET', 'POST'])
-@cross_origin()
 def upload_cgi_fxn():
    if request.method == 'POST':
       # Getting the File
@@ -132,7 +131,6 @@ def upload_cgi_fxn():
       return "CGI File Saved and Loaded to Database Successfully"
 
 @app.route('/uploader/fir', methods = ['GET', 'POST'])
-@cross_origin()
 def upload_fir_fxn():
    if request.method == 'POST':
       # Getting the File
@@ -149,7 +147,6 @@ def upload_fir_fxn():
       return "FIR File Saved and Loaded to Database Successfully"
 
 @app.route('/uploader/thanalist', methods = ['GET', 'POST'])
-@cross_origin()
 def upload_thanalist_fxn():
    if request.method == 'POST':
       # Getting the File
@@ -167,17 +164,18 @@ def upload_thanalist_fxn():
 
 # ############################### Queries ##################################
 @app.route('/query/1/', methods = ['GET'])
-@cross_origin()
 def query_1():
    headers = ["Calling Number","Called Number","Start Time","End Time","Duration(sec)","Start Tower","End Tower","Call Type","IMEI","IMSI","SMSC","Service Provider"]
    query = "SELECT * FROM CallData ORDER BY duration DESC"
    result = queries.runQuery(query)
-   response = {'headers':headers,'rows':result}
+   if len(result) != 0:
+      response = {'headers':headers,'rows':result}
+   else:
+      response = {'headers':["No Data Available"],'rows':[]}
    logger.logit(">>> Query 1 Call")
    return jsonify(response)
 
 @app.route('/query/2/', methods = ['GET'])
-@cross_origin()
 def query_2():
    # Parsing the Headers
    since = str(request.args.get('since')) + " 00:00:00"
@@ -185,87 +183,103 @@ def query_2():
    headers = ["Calling Number","Called Number","Start Time","End Time","Duration(sec)","Start Tower","End Tower","Call Type","IMEI","IMSI","SMSC","Service Provider"]
    query = f'SELECT * FROM CallData WHERE start_time < "{till}" AND start_time > "{since}";'
    result = queries.runQuery(query)
-   response = {'headers':headers,'rows':result}
+   if len(result) != 0:
+      response = {'headers':headers,'rows':result}
+   else:
+      response = {'headers':["No Data Available"],'rows':[]}
    fString = f">>> Query 2 Call since:{since}, till:{till}"
    logger.logit(fString)
    return jsonify(response)
 
 @app.route('/query/3/', methods = ['GET'])
-@cross_origin()
 def query_3():
    headers = ["Calling Number","Called Number","Start Time","End Time","Duration(sec)","Start Tower","End Tower","Call Type","IMEI","IMSI","SMSC","Service Provider"]
    query = f"SELECT * FROM CallData ORDER BY duration DESC LIMIT 10"
    result = queries.runQuery(query)
-   response = {'headers':headers,'rows':result}
+   if len(result) != 0:
+      response = {'headers':headers,'rows':result}
+   else:
+      response = {'headers':["No Data Available"],'rows':[]}
    logger.logit(">>> Query 3 Call")
    return jsonify(response)
 
 @app.route('/query/4/', methods = ['GET'])
-@cross_origin()
 def query_4():
    headers = ["Calling Number","Called Number","Start Time","End Time","Duration(sec)","Start Tower","End Tower","Call Type","IMEI","IMSI","SMSC","Service Provider"]
    query = f"SELECT * FROM CallData WHERE cell_type = 'OUT' ORDER BY duration DESC LIMIT 10"
    result = queries.runQuery(query)
-   response = {'headers':headers,'rows':result}
+   if len(result) != 0:
+      response = {'headers':headers,'rows':result}
+   else:
+      response = {'headers':["No Data Available"],'rows':[]}
    logger.logit(">>> Query 4 Call")
    return jsonify(response)
 
 @app.route('/query/5/', methods = ['GET'])
-@cross_origin()
 def query_5():
    headers = ["Calling Number","Called Number","Start Time","End Time","Duration(sec)","Start Tower","End Tower","Call Type","IMEI","IMSI","SMSC","Service Provider"]
    query = f"SELECT * FROM CallData WHERE cell_type = 'IN' ORDER BY duration DESC LIMIT 10"
    result = queries.runQuery(query)
-   response = {'headers':headers,'rows':result}
+   if len(result) != 0:
+      response = {'headers':headers,'rows':result}
+   else:
+      response = {'headers':["No Data Available"],'rows':[]}
    logger.logit(">>> Query 5 Call")
    return jsonify(response)
 
 @app.route('/query/6/', methods = ['GET'])
-@cross_origin()
 def query_6():
    headers = ["Called Number","Total Duration(sec)"]
    query = f"SELECT DISTINCT called_number, sum(duration) as totalDuration FROM CallData WHERE called_number NOT in (7982345234) GROUP BY called_number  ORDER BY totalDuration DESC "
    result = queries.runQuery(query)
-   response = {'headers':headers,'rows':result}
+   if len(result) != 0:
+      response = {'headers':headers,'rows':result}
+   else:
+      response = {'headers':["No Data Available"],'rows':[]}
    logger.logit(">>> Query 6 Call")
    return jsonify(response)
 
 @app.route('/query/7/', methods = ['GET'])
-@cross_origin()
 def query_7():
    headers = ["Called Number","Duration","Call Type"]
    query = f'SELECT called_number, duration, cell_type FROM CallData WHERE cell_type="OUT" ORDER by duration DESC'
    result = queries.runQuery(query)
-   response = {'headers':headers,'rows':result}
+   if len(result) != 0:
+      response = {'headers':headers,'rows':result}
+   else:
+      response = {'headers':["No Data Available"],'rows':[]}
    logger.logit(">>> Query 7 Call")
    return jsonify(response)
 
 @app.route('/query/8/', methods = ['GET'])
-@cross_origin()
 def query_8():
    headers = ["Calling Number","Duration","Call Type"]
    query = f'SELECT calling_number, duration, cell_type FROM CallData WHERE cell_type="IN" ORDER by duration DESC'
    result = queries.runQuery(query)
    headers = ["Phone NO","Duration","Call Type"]
-   response = {'headers':headers,'rows':result}
+   if len(result) != 0:
+      response = {'headers':headers,'rows':result}
+   else:
+      response = {'headers':["No Data Available"],'rows':[]}
    logger.logit(">>> Query 8 Call")
    return jsonify(response)
 
 @app.route('/query/9/', methods = ['GET'])
-@cross_origin()
 def query_9():
    headers = ["Calling Number","Called Number","Start Time","End Time","Duration(sec)","Start Tower","End Tower","Call Type","IMEI","IMSI","SMSC","Service Provider"]
    # Parsing the Headers
    date = request.args.get('date')
    query = f'SELECT * from CallData where start_time like "{date}%" or end_time like "{date}%"'
    result = queries.runQuery(query)
-   response = {'headers':headers,'rows':result}
+   if len(result) != 0:
+      response = {'headers':headers,'rows':result}
+   else:
+      response = {'headers':["No Data Available"],'rows':[]}
    fString = f">>> Query 10 Call date:{date}"
    logger.logit(fString)
    return jsonify(response)
 
 @app.route('/query/10/', methods = ['GET'])
-@cross_origin()
 def query_10():
    headers = ["Start Time","End Time","Tower 1","Tower 2"]
    # Parsing the Headers
@@ -275,12 +289,14 @@ def query_10():
    #print(result)
    fString = f">>> Query 10 Call date:{date}"
    
-   response = {'headers':headers,'rows':result}
+   if len(result) != 0:
+      response = {'headers':headers,'rows':result}
+   else:
+      response = {'headers':["No Data Available"],'rows':[]}
    logger.logit(fString)
    return jsonify(response)
 
 @app.route('/query/11/', methods = ['GET'])
-@cross_origin()
 def query_11():
    query = f'''SELECT DISTINCT called_number FROM CallData WHERE cell_type="OUT" UNION SELECT DISTINCT calling_number FROM CallData WHERE cell_type="IN"'''
    result = queries.runQuery(query)
@@ -289,34 +305,42 @@ def query_11():
    #for item in result:
    #   res.append(item[0])
    headers = ["Mobile Number"]
-   response = {'headers':headers,'rows':result}
+   if len(result) != 0:
+      response = {'headers':headers,'rows':result}
+   else:
+      response = {'headers':["No Data Available"],'rows':[]}
    logger.logit(">>> Query 11 Call")
    return jsonify(response)
 
 
 @app.route('/query/12/', methods = ['GET'])
-@cross_origin()
 def query_12():
    # Parsing the Headers
    number = request.args.get('number')
    query = f'''SELECT * FROM CallData WHERE called_number="{number}" or calling_number="{number}"'''
    result = queries.runQuery(query)
    headers = ["Calling Number","Called Number","Start Time","End Time","Duration(sec)","Start Tower","End Tower","Call Type","IMEI","IMSI","SMSC","Service Provider"]
-   response = {'headers':headers,'rows':result}
+   if len(result) != 0:
+      response = {'headers':headers,'rows':result}
+   else:
+      response = {'headers':["No Data Available"],'rows':[]}
    fString = f">>> Query 12 Call number:{number}"
    logger.logit(fString)
    return jsonify(response)
 
 @app.route('/query/20/', methods = ['GET'])
-@cross_origin()
 def query_20():
    # Parsing the Headers
    fir = request.args.get('fir')
    query = f'SELECT * from FIR WHERE FIR_No={int(fir)}'
    result = queries.runQuery(query)
    #print(result)
-   response = {'result':result[0]}
-   fString = f">>> Query 12 Call fir:{fir}"
+   headers = ["FIR No","District","PS ID","Time of FIR","Complainant","Act","Section","Complainant Mobile Number"]
+   if len(result) != 0:
+      response = {'headers':headers,'rows':result}
+   else:
+      response = {'headers':["No Data Available"],'rows':[]}
+   fString = f">>> Query 20 Call for:{fir}"
    logger.logit(fString)
    return jsonify(response)
 
@@ -362,6 +386,20 @@ def logs():
       formated_lines.append(lines[i])
 
    return jsonify({'logs':formated_lines})
+
+@app.route('/graph')
+def graph():
+   query = f'SELECT * from "7982345234"'
+   result = queries.runQuery(query)
+   #print(result)
+   headers = ["Date","Incomming Calls","OutGoing Calls","Total Interactions"]
+   if len(result) != 0:
+      response = {'headers':headers,'rows':result}
+   else:
+      response = {'headers':["No Data Available"],'rows':[]}
+   fString = f">>> GRAPH Call"
+   logger.logit(fString)
+   return jsonify(response)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port = 1313,debug = True)

@@ -48,6 +48,42 @@ def convdate(data,time):
   #print(fstring)
   return(fstring)
 
+def convdate2(date):
+  data = date.lower().split("-")
+  if len(data[0]) == 1:
+    date = "0"+data[0]
+  else:
+    date = data[0]
+  month = data[1]
+  year = data[2]
+  if month =='jan':
+    month = '01'
+  elif month =='feb':
+    month = '02'
+  elif month =='mar':
+    month = '03'
+  elif month =='apr':
+    month = '04'
+  elif month =='may':
+    month = '05'
+  elif month =='jun':
+    month = '06'
+  elif month =='jul':
+    month = '07'
+  elif month =='aug':
+    month = '08'
+  elif month =='sep':
+    month = '09'
+  elif month =='oct':
+    month = '10'
+  elif month =='nov':
+    month = '11'
+  elif month =='dec':
+    month = '12'
+  fstring = f"{year}-{month}-{date}"
+  #print(fstring)
+  return(fstring)
+
 def convdur(time):
     time = time.split(":")
     seconds = int(time[0])*60*60 + int(time[1])*60 + int(time[2])
@@ -80,7 +116,7 @@ def addThanaData(CSVpath):
     logger.logit("| ThanaData added to Database")
     conn.close()
 
-def addCDRData(CSVpath):
+def addCDRData(CSVpath,number):
     conn = sqlite3.connect("/home/pi/Desktop/AFKZenCoders/PS12/CDRdata.db")
     cur = conn.cursor()
 
@@ -102,6 +138,11 @@ def addCDRData(CSVpath):
 
     with open(CSVpath) as csv_file:
         count = 0
+        date_counter_in = 0
+        date_counter_out = 0
+        sms_count = 0
+        total = 0
+        last_date = ""
         csv_reader = csv.reader(csv_file, delimiter=',')
         for row in csv_reader:
             if count == 0:
@@ -124,6 +165,43 @@ def addCDRData(CSVpath):
             imsi=row[10]
             smsc=row[11]
             roam_nw=row[12]
+            ###################
+            curr_date = convdate2(date)
+            cur.execute(f"""CREATE TABLE IF NOT EXISTS '{number}'(
+                "date" DATE,
+                "in_count" INT,
+                "out_count" INT,
+                "sms_count" INT,
+                "total" INT
+                )""")
+            if (last_date != curr_date) and count!=1:
+              cur.execute(f'INSERT INTO "{number}" (date,in_count,out_count,sms_count,total) VALUES (?,?,?,?,?)',(last_date,date_counter_in,date_counter_out,sms_count,total))
+              last_date = convdate2(date)
+              sms_count = 0
+              date_counter_in = 0
+              date_counter_out = 0
+              total = 0
+              if cell_type == "SMT":
+                sms_count += 1
+              elif cell_type == "IN":
+                date_counter_in += 1
+                total += 1
+              elif cell_type == "OUT":
+                date_counter_out += 1
+                total += 1
+            else:
+              if count==1:
+                last_date = convdate2(date)
+              count += 1
+              if cell_type == "SMT":
+                sms_count += 1
+              elif cell_type == "IN":
+                date_counter_in += 1
+                total += 1
+              elif cell_type == "OUT":
+                date_counter_out += 1
+                total += 1
+            ##################
             cur.execute("INSERT INTO CallData (calling_number,called_number,start_time,end_time,duration,cell1,cell2,cell_type,imei,imsi,smsc,roam_nw) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",(calling_number,called_number,start_time,end_time,duration,cell1,cell2,cell_type,imei,imsi,smsc,roam_nw))
             conn.commit()
     logger.logit("| CDRData added to Database")
