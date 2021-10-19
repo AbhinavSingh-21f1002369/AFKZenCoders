@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      window.onload = function () {
+        let inCommingCalls = [];
+        let outGoingCalls = [];
+        let SMS = [];
+        let totalInteractions = [];
+        let headers;
+        let options = {
+          axisX: {
+            valueFormatString: "D MMM YYYY",
+          },
+          toolTip: {
+            shared: true,
+            cornerRadius: 4
+          },
+          theme: "dark2",
+          legend: {
+            cursor: "pointer",
+            verticalAlign: "top",
+            horizontalAlign: "center",
+            dockInsidePlotArea: true,
+            itemclick: toogleDataSeries,
+          },
+          data: [
+            {
+              type: "line",
+              axisYType: "secondary",
+              name: "Incomming Calls",
+              showInLegend: true,
+              markerSize: 0,
+              dataPoints: inCommingCalls,
+            },
+            {
+              type: "line",
+              axisYType: "secondary",
+              name: "OutGoing Calls",
+              showInLegend: true,
+              markerSize: 0,
+              dataPoints: outGoingCalls,
+            },
+            {
+              type: "line",
+              axisYType: "secondary",
+              name: "SMS",
+              showInLegend: true,
+              markerSize: 0,
+              dataPoints: SMS,
+            },
+            {
+              type: "line",
+              axisYType: "secondary",
+              name: "Total Interactions",
+              showInLegend: true,
+              markerSize: 0,
+              dataPoints: totalInteractions,
+            },
+          ],
+        };
+        let chart = new CanvasJS.Chart("chartContainer", options);
+        //end of chart
+        async function fetchData() {
+          const response = await fetch("http://iot.ccnet.in:1313/graph").then(
+            (data) => data.json()
+          );
+          headers = response.headers;
+          response.rows.forEach((element, index) => {
+            inCommingCalls.push({
+              x: new Date(element[0]),
+              y: element[1],
+            });
+            outGoingCalls.push({
+              x: new Date(element[0]),
+              y: element[2],
+            });
+            SMS.push({
+              x: new Date(element[0]),
+              y: element[3],
+            });
+            totalInteractions.push({
+              x: new Date(element[0]),
+              y: element[4],
+            });
+          });
+          chart.render();
+        }
+        fetchData();
+        function toogleDataSeries(e) {
+          if (
+            typeof e.dataSeries.visible === "undefined" ||
+            e.dataSeries.visible
+          ) {
+            e.dataSeries.visible = false;
+          } else {
+            e.dataSeries.visible = true;
+          }
+          chart.render();
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <div id="chartContainer" style="height: 300px; width: 50%"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  </body>
+</html>
