@@ -17,3 +17,7 @@ Sample Queries
 - [Query](http://iot.ccnet.in:1313/query/1) - `SELECT * FROM CallData ORDER BY duration DESC`
 - [Query 2](http://iot.ccnet.in:1313/query/4) - `SELECT * FROM CallData WHERE cell_type = 'OUT' ORDER BY duration DESC LIMIT 10`
 - [Query 3](http://iot.ccnet.in:1313/query/3) - `SELECT * FROM CallData ORDER BY duration DESC LIMIT 10`
+- [Query 4](http://iot.ccnet.in:1313/query/4)
+- [Query 5](http://iot.ccnet.in:1313/query/5)
+- [Query 6](http://iot.ccnet.in:1313/query/6)
+- [Query 7](http://iot.ccnet.in:1313/query/7)
