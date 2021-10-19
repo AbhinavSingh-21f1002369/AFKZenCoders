@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify,send_file
+from flask import Flask, render_template, request, jsonify,send_file, redirect
 from werkzeug import secure_filename
 import os
 import utilities, queries
@@ -12,10 +12,26 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 
+@app.route('/')
+def hello():
+   logger.logit("Rendered root '/'")
+   return redirect("http://www.themedallionschool.com/abhinav/PS12/index.html", code=302)
+
+@app.route('/userauth', methods = ['POST','GET'])
+def userauth():
+   username = request.form.get('username')
+   password = request.form.get('password')
+   if username=="root" and password=="toor":
+      logger.logit(f"Success LOGIN Request Username:{username} Password:{password}")
+      return redirect("http://www.themedallionschool.com/abhinav/PS12/upload.html", code=302)
+   else:
+      logger.logit(f"Failure LOGIN Request Username:{username} Password:{password}")
+      return redirect("http://www.themedallionschool.com/abhinav/PS12/incorrect.html", code=302)
+
 
 @app.route('/upload')
 def upload_file():
-   logger.logit("Rendered upload.html")
+   logger.logit("Rendered upload.html - test wali")
    return render_template('upload.html')
 
 @app.route('/uploader',methods=['GET','POST'])
@@ -165,8 +181,8 @@ def upload_thanalist_fxn():
 # ############################### Queries ##################################
 @app.route('/query/1/', methods = ['GET'])
 def query_1():
-   headers = ["Calling Number","Called Number","Start Time","End Time","Duration(sec)","Start Tower","End Tower","Call Type","IMEI","IMSI","SMSC","Service Provider"]
-   query = "SELECT * FROM CallData ORDER BY duration DESC"
+   headers = ["Calling Number","Called Number","Start Time","Duration(sec)","Call Type"]
+   query = "SELECT calling_number, called_number, start_time, duration, cell_type FROM CallData ORDER BY duration DESC"
    result = queries.runQuery(query)
    if len(result) != 0:
       response = {'headers':headers,'rows':result}
@@ -205,8 +221,8 @@ def query_3():
 
 @app.route('/query/4/', methods = ['GET'])
 def query_4():
-   headers = ["Calling Number","Called Number","Start Time","End Time","Duration(sec)","Start Tower","End Tower","Call Type","IMEI","IMSI","SMSC","Service Provider"]
-   query = f"SELECT * FROM CallData WHERE cell_type = 'OUT' ORDER BY duration DESC LIMIT 10"
+   headers = ["Dialled Number","Total Dialled Calls","Total Duration"]
+   query = f'''SELECT called_number, count(*) as 'Frequency', sum(duration) as 'Total Duration' from CallData where cell_type="OUT" GROUP by called_number ORDER by Frequency DESC'''
    result = queries.runQuery(query)
    if len(result) != 0:
       response = {'headers':headers,'rows':result}
@@ -217,8 +233,8 @@ def query_4():
 
 @app.route('/query/5/', methods = ['GET'])
 def query_5():
-   headers = ["Calling Number","Called Number","Start Time","End Time","Duration(sec)","Start Tower","End Tower","Call Type","IMEI","IMSI","SMSC","Service Provider"]
-   query = f"SELECT * FROM CallData WHERE cell_type = 'IN' ORDER BY duration DESC LIMIT 10"
+   headers = ["Caller","Total Recieved Calls","Total Duration"]
+   query = f'''SELECT calling_number, count(*) as 'Frequency', sum(duration) as 'Total Duration' from CallData where cell_type="IN" GROUP by calling_number ORDER by Frequency DESC'''
    result = queries.runQuery(query)
    if len(result) != 0:
       response = {'headers':headers,'rows':result}
@@ -389,10 +405,10 @@ def logs():
 
 @app.route('/graph')
 def graph():
-   query = f'SELECT * from "7982345234"'
+   query = f'SELECT date,in_count,out_count,sms_count,total from "798234523"'
    result = queries.runQuery(query)
    #print(result)
-   headers = ["Date","Incomming Calls","OutGoing Calls","Total Interactions"]
+   headers = ["Date","Incomming Calls","OutGoing Calls","SMS","Total Interactions"]
    if len(result) != 0:
       response = {'headers':headers,'rows':result}
    else:

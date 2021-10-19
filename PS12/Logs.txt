@@ -594,3 +594,552 @@ Mon Oct 18 10:40:09 2021 - | FIR_Dataset Saved
 Mon Oct 18 10:40:12 2021 - | FIRData added to Database
 Mon Oct 18 10:40:13 2021 - \. Multiple Files Uploaded - 6
 Mon Oct 18 10:40:51 2021 - >>> Query 1 Call
+Mon Oct 18 10:48:38 2021 - /° Multiple Files Upload Start
+Mon Oct 18 10:48:38 2021 - \. Multiple Files Uploaded - 0
+Mon Oct 18 10:51:29 2021 - /° Multiple Files Upload Start
+Mon Oct 18 10:51:30 2021 - \. Multiple Files Uploaded - 0
+Mon Oct 18 10:52:14 2021 - /° Multiple Files Upload Start
+Mon Oct 18 10:52:15 2021 - File Upload error - CDR.csv
+Mon Oct 18 10:52:16 2021 - | Thana_list_UP Saved
+Mon Oct 18 10:52:20 2021 - | ThanaListData added to Database
+Mon Oct 18 10:52:20 2021 - \. Multiple Files Uploaded - 2
+Mon Oct 18 10:54:27 2021 - ### Files Deleted ###
+Mon Oct 18 10:54:56 2021 - /° Multiple Files Upload Start
+Mon Oct 18 10:54:56 2021 - | CDRData Saved 798234523
+Mon Oct 18 10:54:58 2021 - | CDRData added to Database
+Mon Oct 18 10:54:59 2021 - | CGIData Saved
+Mon Oct 18 10:55:00 2021 - | CGIData added to Database
+Mon Oct 18 10:55:01 2021 - File Upload error - FIR_Dataset_.csv
+Mon Oct 18 10:55:01 2021 - | Bank_Details Saved
+Mon Oct 18 10:55:02 2021 - | BankData added to Database
+Mon Oct 18 10:55:03 2021 - | Thana Saved
+Mon Oct 18 10:55:10 2021 - | ThanaData added to Database
+Mon Oct 18 10:55:10 2021 - | Thana_list_UP Saved
+Mon Oct 18 10:55:12 2021 - | ThanaListData added to Database
+Mon Oct 18 10:55:13 2021 - \. Multiple Files Uploaded - 6
+Mon Oct 18 10:58:14 2021 - ### Files Deleted ###
+Mon Oct 18 10:58:50 2021 - /° Multiple Files Upload Start
+Mon Oct 18 10:58:50 2021 - | CDRData Saved 798234523
+Mon Oct 18 10:58:52 2021 - | CDRData added to Database
+Mon Oct 18 10:58:53 2021 - | CGIData Saved
+Mon Oct 18 10:58:54 2021 - | CGIData added to Database
+Mon Oct 18 10:58:55 2021 - | FIR_Dataset Saved
+Mon Oct 18 10:58:57 2021 - | FIRData added to Database
+Mon Oct 18 10:58:57 2021 - | Bank_Details Saved
+Mon Oct 18 10:58:58 2021 - | BankData added to Database
+Mon Oct 18 10:58:59 2021 - | Thana Saved
+Mon Oct 18 10:59:06 2021 - | ThanaData added to Database
+Mon Oct 18 10:59:07 2021 - | Thana_list_UP Saved
+Mon Oct 18 10:59:09 2021 - | ThanaListData added to Database
+Mon Oct 18 10:59:10 2021 - \. Multiple Files Uploaded - 6
+Mon Oct 18 11:08:10 2021 - >>> Query 20 Call for:0278
+Mon Oct 18 11:08:10 2021 - >>> Query 20 Call for:0278
+Mon Oct 18 11:09:11 2021 - ### Files Deleted ###
+Mon Oct 18 11:12:52 2021 - /° Multiple Files Upload Start
+Mon Oct 18 11:12:52 2021 - | CDRData Saved 798234523
+Mon Oct 18 11:12:54 2021 - | CDRData added to Database
+Mon Oct 18 11:12:55 2021 - | CGIData Saved
+Mon Oct 18 11:12:56 2021 - | CGIData added to Database
+Mon Oct 18 11:12:57 2021 - | FIR_Dataset Saved
+Mon Oct 18 11:13:02 2021 - | FIRData added to Database
+Mon Oct 18 11:13:03 2021 - | Bank_Details Saved
+Mon Oct 18 11:13:03 2021 - | BankData added to Database
+Mon Oct 18 11:13:04 2021 - | Thana Saved
+Mon Oct 18 11:13:09 2021 - | ThanaData added to Database
+Mon Oct 18 11:13:09 2021 - | Thana_list_UP Saved
+Mon Oct 18 11:13:13 2021 - | ThanaListData added to Database
+Mon Oct 18 11:13:14 2021 - \. Multiple Files Uploaded - 6
+Mon Oct 18 11:13:36 2021 - >>> Query 12 Call number:7982345234
+Mon Oct 18 11:13:38 2021 - >>> Query 12 Call number:7982345234
+Mon Oct 18 11:14:23 2021 - >>> Query 2 Call since:2021-01-01 00:00:00, till:2021-01-06 23:59:59
+Mon Oct 18 11:14:25 2021 - >>> Query 2 Call since:2021-01-01 00:00:00, till:2021-01-06 23:59:59
+Mon Oct 18 11:14:25 2021 - >>> Query 2 Call since:2021-01-01 00:00:00, till:2021-01-06 23:59:59
+Mon Oct 18 11:14:27 2021 - >>> Query 2 Call since:2021-01-01 00:00:00, till:2021-01-06 23:59:59
+Mon Oct 18 11:14:54 2021 - >>> Query 2 Call since:2021-01-01 00:00:00, till:2021-01-01 23:59:59
+Mon Oct 18 11:14:56 2021 - >>> Query 2 Call since:2021-01-01 00:00:00, till:2021-01-01 23:59:59
+Mon Oct 18 11:15:06 2021 - >>> Query 10 Call date:2021-10-01
+Mon Oct 18 11:15:08 2021 - >>> Query 10 Call date:2021-10-01
+Mon Oct 18 11:15:15 2021 - >>> Query 10 Call date:2021-10-02
+Mon Oct 18 11:15:16 2021 - >>> Query 10 Call date:2021-10-02
+Mon Oct 18 11:15:24 2021 - >>> Query 10 Call date:2021-01-02
+Mon Oct 18 11:15:26 2021 - >>> Query 10 Call date:2021-01-02
+Mon Oct 18 11:15:36 2021 - >>> Query 4 Call
+Mon Oct 18 11:15:44 2021 - >>> Query 5 Call
+Mon Oct 18 11:15:48 2021 - >>> Query 1 Call
+Mon Oct 18 11:15:54 2021 - >>> Query 11 Call
+Mon Oct 18 11:15:58 2021 - >>> Query 1 Call
+Mon Oct 18 11:16:36 2021 - >>> Query 20 Call for:0278
+Mon Oct 18 11:16:37 2021 - >>> Query 20 Call for:0278
+Mon Oct 18 11:17:07 2021 - >>> Query 20 Call for:0278
+Mon Oct 18 11:17:08 2021 - >>> Query 20 Call for:0278
+Mon Oct 18 11:19:50 2021 - >>> Query 2 Call since:2021-01-01 00:00:00, till:2021-01-02 23:59:59
+Mon Oct 18 11:19:51 2021 - >>> Query 2 Call since:2021-01-01 00:00:00, till:2021-01-02 23:59:59
+Mon Oct 18 11:20:17 2021 - >>> Query 20 Call for:0278
+Mon Oct 18 11:20:18 2021 - >>> Query 20 Call for:0278
+Mon Oct 18 11:23:05 2021 - >>> Query 20 Call for:0278
+Mon Oct 18 11:23:06 2021 - >>> Query 20 Call for:0278
+Mon Oct 18 12:58:12 2021 - >>> Query 20 Call for:0278
+Mon Oct 18 12:58:14 2021 - >>> Query 20 Call for:0278
+Mon Oct 18 12:59:15 2021 - >>> Query 2 Call since:2021-01-01 00:00:00, till:2021-01-02 23:59:59
+Mon Oct 18 12:59:17 2021 - >>> Query 2 Call since:2021-01-01 00:00:00, till:2021-01-02 23:59:59
+Mon Oct 18 13:00:28 2021 - >>> Query 10 Call date:2021-01-02
+Mon Oct 18 13:00:30 2021 - >>> Query 10 Call date:2021-01-02
+Mon Oct 18 13:00:44 2021 - >>> Query 11 Call
+Mon Oct 18 13:30:25 2021 - >>> Query 1 Call
+Mon Oct 18 13:31:18 2021 - >>> Query 11 Call
+Mon Oct 18 13:32:51 2021 - >>> Query 20 Call for:0278
+Mon Oct 18 13:32:52 2021 - >>> Query 20 Call for:0278
+Mon Oct 18 14:46:08 2021 - >>> Query 20 Call for:0278
+Mon Oct 18 14:46:08 2021 - >>> Query 20 Call for:0278
+Mon Oct 18 14:52:43 2021 - >>> Query 1 Call
+Mon Oct 18 14:54:41 2021 - >>> Query 1 Call
+Mon Oct 18 15:00:02 2021 - >>> Query 1 Call
+Mon Oct 18 15:00:09 2021 - >>> Query 5 Call
+Mon Oct 18 15:00:12 2021 - >>> Query 4 Call
+Mon Oct 18 15:00:16 2021 - >>> Query 11 Call
+Mon Oct 18 15:06:19 2021 - >>> Query 1 Call
+Mon Oct 18 15:06:33 2021 - >>> Query 1 Call
+Mon Oct 18 15:12:04 2021 - Rendered upload.html
+Mon Oct 18 15:17:41 2021 - Rendered upload.html
+Mon Oct 18 15:17:47 2021 - Rendered cdr.html
+Mon Oct 18 15:18:28 2021 - Rendered cdr.html
+Mon Oct 18 15:25:24 2021 - >>> Query 1 Call
+Mon Oct 18 16:13:34 2021 - >>> Query 1 Call
+Mon Oct 18 16:13:58 2021 - >>> Query 2 Call since:2021-01-01 00:00:00, till:2021-01-03 23:59:59
+Mon Oct 18 16:13:59 2021 - >>> Query 2 Call since:2021-01-01 00:00:00, till:2021-01-03 23:59:59
+Mon Oct 18 16:14:01 2021 - >>> Query 2 Call since:2021-01-01 00:00:00, till:2021-01-03 23:59:59
+Mon Oct 18 16:14:03 2021 - >>> Query 2 Call since:2021-01-01 00:00:00, till:2021-01-03 23:59:59
+Mon Oct 18 16:28:16 2021 - >>> Query 2 Call since:2021-01-01 00:00:00, till:2021-01-03 23:59:59
+Mon Oct 18 16:28:17 2021 - >>> Query 2 Call since:2021-01-01 00:00:00, till:2021-01-03 23:59:59
+Mon Oct 18 16:29:54 2021 - >>> Query 11 Call
+Mon Oct 18 16:30:03 2021 - >>> Query 1 Call
+Mon Oct 18 16:30:17 2021 - >>> Query 4 Call
+Mon Oct 18 16:30:29 2021 - >>> Query 5 Call
+Mon Oct 18 16:33:06 2021 - >>> Query 4 Call
+Mon Oct 18 17:04:44 2021 - >>> Query 4 Call
+Mon Oct 18 20:05:45 2021 - >>> Query 1 Call
+Mon Oct 18 20:05:46 2021 - >>> Query 1 Call
+Mon Oct 18 20:06:15 2021 - >>> Query 4 Call
+Mon Oct 18 20:06:27 2021 - >>> Query 5 Call
+Mon Oct 18 20:06:52 2021 - >>> Query 4 Call
+Mon Oct 18 20:07:00 2021 - >>> Query 11 Call
+Mon Oct 18 20:08:21 2021 - >>> Query 1 Call
+Mon Oct 18 20:48:30 2021 - >>> Query 5 Call
+Mon Oct 18 20:51:53 2021 - >>> Query 4 Call
+Mon Oct 18 20:54:30 2021 - >>> Query 5 Call
+Mon Oct 18 20:54:43 2021 - >>> Query 5 Call
+Mon Oct 18 20:57:53 2021 - >>> Query 4 Call
+Mon Oct 18 20:58:27 2021 - >>> Query 4 Call
+Mon Oct 18 20:59:19 2021 - >>> Query 5 Call
+Mon Oct 18 21:00:30 2021 - >>> Query 1 Call
+Mon Oct 18 21:01:06 2021 - >>> Query 11 Call
+Mon Oct 18 21:01:51 2021 - >>> Query 11 Call
+Mon Oct 18 21:01:54 2021 - >>> Query 4 Call
+Mon Oct 18 21:01:59 2021 - >>> Query 4 Call
+Mon Oct 18 21:02:00 2021 - >>> Query 4 Call
+Mon Oct 18 21:02:20 2021 - >>> Query 1 Call
+Mon Oct 18 21:03:47 2021 - >>> Query 2 Call since:2021-01-01 00:00:00, till:2021-01-01 23:59:59
+Mon Oct 18 21:03:48 2021 - >>> Query 2 Call since:2021-01-01 00:00:00, till:2021-01-01 23:59:59
+Mon Oct 18 21:03:49 2021 - >>> Query 2 Call since:2021-01-01 00:00:00, till:2021-01-01 23:59:59
+Mon Oct 18 21:03:51 2021 - >>> Query 2 Call since:2021-01-01 00:00:00, till:2021-01-01 23:59:59
+Mon Oct 18 21:03:53 2021 - >>> Query 2 Call since:2021-01-01 00:00:00, till:2021-01-01 23:59:59
+Mon Oct 18 21:03:54 2021 - >>> Query 2 Call since:2021-01-01 00:00:00, till:2021-01-01 23:59:59
+Mon Oct 18 21:05:27 2021 - >>> Query 12 Call number:7343938444
+Mon Oct 18 21:05:28 2021 - >>> Query 12 Call number:7343938444
+Mon Oct 18 21:05:40 2021 - >>> Query 12 Call number:7343938444
+Mon Oct 18 21:05:40 2021 - >>> Query 12 Call number:7343938444
+Mon Oct 18 21:06:34 2021 - >>> Query 2 Call since:2021-01-01 00:00:00, till:2021-01-01 23:59:59
+Mon Oct 18 21:06:35 2021 - >>> Query 2 Call since:2021-01-01 00:00:00, till:2021-01-01 23:59:59
+Mon Oct 18 21:08:17 2021 - >>> Query 2 Call since:2021-01-01 00:00:00, till:2021-01-01 23:59:59
+Mon Oct 18 21:08:18 2021 - >>> Query 2 Call since:2021-01-01 00:00:00, till:2021-01-01 23:59:59
+Mon Oct 18 21:13:16 2021 - >>> Query 10 Call date:2021-01-01
+Mon Oct 18 21:13:16 2021 - >>> Query 10 Call date:2021-01-01
+Mon Oct 18 21:18:12 2021 - >>> Query 12 Call number:7343938444
+Mon Oct 18 21:18:12 2021 - >>> Query 12 Call number:7343938444
+Mon Oct 18 21:19:50 2021 - >>> Query 12 Call number:7343938444
+Tue Oct 19 11:23:44 2021 - >>> Query 20 Call for:0278
+Tue Oct 19 11:23:44 2021 - >>> Query 20 Call for:0278
+Tue Oct 19 11:57:48 2021 - >>> GRAPH Call
+Tue Oct 19 12:00:02 2021 - >>> GRAPH Call
+Tue Oct 19 12:03:27 2021 - >>> GRAPH Call
+Tue Oct 19 12:11:40 2021 - >>> GRAPH Call
+Tue Oct 19 12:11:41 2021 - >>> GRAPH Call
+Tue Oct 19 12:12:55 2021 - >>> GRAPH Call
+Tue Oct 19 12:13:08 2021 - >>> GRAPH Call
+Tue Oct 19 12:13:36 2021 - >>> GRAPH Call
+Tue Oct 19 12:13:40 2021 - >>> GRAPH Call
+Tue Oct 19 12:13:48 2021 - >>> GRAPH Call
+Tue Oct 19 12:13:52 2021 - >>> GRAPH Call
+Tue Oct 19 12:13:57 2021 - >>> GRAPH Call
+Tue Oct 19 12:13:59 2021 - >>> GRAPH Call
+Tue Oct 19 12:14:20 2021 - >>> GRAPH Call
+Tue Oct 19 12:14:20 2021 - >>> GRAPH Call
+Tue Oct 19 12:14:23 2021 - >>> GRAPH Call
+Tue Oct 19 12:14:23 2021 - >>> GRAPH Call
+Tue Oct 19 12:14:27 2021 - >>> GRAPH Call
+Tue Oct 19 12:14:43 2021 - >>> GRAPH Call
+Tue Oct 19 12:15:42 2021 - >>> GRAPH Call
+Tue Oct 19 12:17:42 2021 - >>> GRAPH Call
+Tue Oct 19 12:17:42 2021 - >>> GRAPH Call
+Tue Oct 19 12:17:46 2021 - >>> GRAPH Call
+Tue Oct 19 12:17:51 2021 - >>> GRAPH Call
+Tue Oct 19 12:17:57 2021 - >>> GRAPH Call
+Tue Oct 19 12:17:57 2021 - >>> GRAPH Call
+Tue Oct 19 12:18:02 2021 - >>> GRAPH Call
+Tue Oct 19 12:27:47 2021 - >>> GRAPH Call
+Tue Oct 19 12:27:48 2021 - Failure LOGIN Request Username:None Password:None
+Tue Oct 19 12:27:49 2021 - >>> GRAPH Call
+Tue Oct 19 12:28:11 2021 - Failure LOGIN Request Username:None Password:None
+Tue Oct 19 12:30:37 2021 - Failure LOGIN Request Username:None Password:None
+Tue Oct 19 12:31:38 2021 - Failure LOGIN Request Username:None Password:None
+Tue Oct 19 12:32:46 2021 - >>> GRAPH Call
+Tue Oct 19 12:33:57 2021 - Success LOGIN Request Username:root Password:toor
+Tue Oct 19 12:37:20 2021 - >>> GRAPH Call
+Tue Oct 19 12:37:30 2021 - >>> GRAPH Call
+Tue Oct 19 12:37:35 2021 - >>> GRAPH Call
+Tue Oct 19 12:38:52 2021 - >>> GRAPH Call
+Tue Oct 19 12:41:09 2021 - >>> GRAPH Call
+Tue Oct 19 12:41:11 2021 - >>> GRAPH Call
+Tue Oct 19 12:41:38 2021 - Failure LOGIN Request Username:None Password:None
+Tue Oct 19 12:42:48 2021 - Success LOGIN Request Username:root Password:toor
+Tue Oct 19 12:45:26 2021 - >>> GRAPH Call
+Tue Oct 19 12:45:35 2021 - >>> GRAPH Call
+Tue Oct 19 12:46:09 2021 - >>> GRAPH Call
+Tue Oct 19 12:46:12 2021 - >>> GRAPH Call
+Tue Oct 19 12:46:17 2021 - >>> GRAPH Call
+Tue Oct 19 12:47:23 2021 - >>> GRAPH Call
+Tue Oct 19 12:47:24 2021 - >>> GRAPH Call
+Tue Oct 19 12:47:42 2021 - Success LOGIN Request Username:root Password:toor
+Tue Oct 19 12:48:08 2021 - >>> GRAPH Call
+Tue Oct 19 12:48:15 2021 - >>> GRAPH Call
+Tue Oct 19 12:48:32 2021 - >>> GRAPH Call
+Tue Oct 19 12:48:46 2021 - >>> GRAPH Call
+Tue Oct 19 12:48:51 2021 - >>> GRAPH Call
+Tue Oct 19 12:48:57 2021 - >>> GRAPH Call
+Tue Oct 19 12:49:00 2021 - >>> GRAPH Call
+Tue Oct 19 12:49:10 2021 - >>> GRAPH Call
+Tue Oct 19 12:49:22 2021 - >>> GRAPH Call
+Tue Oct 19 12:49:22 2021 - >>> GRAPH Call
+Tue Oct 19 12:49:26 2021 - >>> GRAPH Call
+Tue Oct 19 12:49:27 2021 - >>> GRAPH Call
+Tue Oct 19 12:49:44 2021 - Success LOGIN Request Username:root Password:toor
+Tue Oct 19 12:50:35 2021 - >>> GRAPH Call
+Tue Oct 19 12:51:12 2021 - >>> GRAPH Call
+Tue Oct 19 12:51:15 2021 - >>> GRAPH Call
+Tue Oct 19 12:51:26 2021 - >>> GRAPH Call
+Tue Oct 19 12:51:29 2021 - >>> GRAPH Call
+Tue Oct 19 12:52:21 2021 - >>> GRAPH Call
+Tue Oct 19 12:52:32 2021 - >>> GRAPH Call
+Tue Oct 19 12:53:07 2021 - >>> GRAPH Call
+Tue Oct 19 12:53:10 2021 - >>> GRAPH Call
+Tue Oct 19 12:53:18 2021 - >>> GRAPH Call
+Tue Oct 19 12:53:21 2021 - >>> GRAPH Call
+Tue Oct 19 12:53:24 2021 - Rendered root '/'
+Tue Oct 19 12:53:33 2021 - >>> GRAPH Call
+Tue Oct 19 12:53:38 2021 - Success LOGIN Request Username:root Password:toor
+Tue Oct 19 12:54:01 2021 - >>> GRAPH Call
+Tue Oct 19 12:54:01 2021 - Success LOGIN Request Username:root Password:toor
+Tue Oct 19 12:54:22 2021 - >>> GRAPH Call
+Tue Oct 19 12:54:25 2021 - >>> GRAPH Call
+Tue Oct 19 12:54:29 2021 - >>> GRAPH Call
+Tue Oct 19 12:54:35 2021 - >>> GRAPH Call
+Tue Oct 19 12:54:40 2021 - >>> GRAPH Call
+Tue Oct 19 12:54:41 2021 - >>> GRAPH Call
+Tue Oct 19 12:54:47 2021 - >>> GRAPH Call
+Tue Oct 19 12:54:54 2021 - >>> Query 11 Call
+Tue Oct 19 12:54:58 2021 - >>> GRAPH Call
+Tue Oct 19 12:55:15 2021 - >>> GRAPH Call
+Tue Oct 19 12:55:16 2021 - >>> GRAPH Call
+Tue Oct 19 12:55:18 2021 - >>> GRAPH Call
+Tue Oct 19 12:55:38 2021 - >>> GRAPH Call
+Tue Oct 19 12:55:40 2021 - >>> GRAPH Call
+Tue Oct 19 12:55:48 2021 - >>> GRAPH Call
+Tue Oct 19 12:55:51 2021 - >>> GRAPH Call
+Tue Oct 19 12:55:56 2021 - >>> GRAPH Call
+Tue Oct 19 12:56:01 2021 - >>> GRAPH Call
+Tue Oct 19 12:56:07 2021 - >>> GRAPH Call
+Tue Oct 19 12:56:13 2021 - >>> GRAPH Call
+Tue Oct 19 12:56:17 2021 - Success LOGIN Request Username:root Password:toor
+Tue Oct 19 12:56:24 2021 - >>> GRAPH Call
+Tue Oct 19 12:56:53 2021 - >>> GRAPH Call
+Tue Oct 19 12:57:01 2021 - >>> GRAPH Call
+Tue Oct 19 12:57:11 2021 - >>> GRAPH Call
+Tue Oct 19 12:57:17 2021 - >>> GRAPH Call
+Tue Oct 19 12:57:21 2021 - >>> GRAPH Call
+Tue Oct 19 12:57:26 2021 - >>> GRAPH Call
+Tue Oct 19 12:58:12 2021 - >>> GRAPH Call
+Tue Oct 19 12:58:16 2021 - >>> GRAPH Call
+Tue Oct 19 12:58:17 2021 - >>> Query 1 Call
+Tue Oct 19 12:58:18 2021 - >>> GRAPH Call
+Tue Oct 19 12:58:34 2021 - >>> GRAPH Call
+Tue Oct 19 12:59:27 2021 - >>> GRAPH Call
+Tue Oct 19 12:59:43 2021 - >>> GRAPH Call
+Tue Oct 19 12:59:53 2021 - >>> GRAPH Call
+Tue Oct 19 13:00:26 2021 - >>> GRAPH Call
+Tue Oct 19 13:00:28 2021 - >>> GRAPH Call
+Tue Oct 19 13:00:32 2021 - >>> GRAPH Call
+Tue Oct 19 13:00:34 2021 - >>> GRAPH Call
+Tue Oct 19 13:00:36 2021 - >>> GRAPH Call
+Tue Oct 19 13:00:37 2021 - >>> GRAPH Call
+Tue Oct 19 13:00:47 2021 - >>> GRAPH Call
+Tue Oct 19 13:00:56 2021 - >>> GRAPH Call
+Tue Oct 19 13:01:00 2021 - >>> GRAPH Call
+Tue Oct 19 13:01:00 2021 - >>> GRAPH Call
+Tue Oct 19 13:01:06 2021 - >>> GRAPH Call
+Tue Oct 19 13:01:08 2021 - >>> GRAPH Call
+Tue Oct 19 13:01:16 2021 - >>> GRAPH Call
+Tue Oct 19 13:01:55 2021 - Failure LOGIN Request Username:root Password:root
+Tue Oct 19 13:02:09 2021 - >>> GRAPH Call
+Tue Oct 19 13:02:11 2021 - Failure LOGIN Request Username:root Password:
+Tue Oct 19 13:02:15 2021 - >>> GRAPH Call
+Tue Oct 19 13:02:19 2021 - >>> GRAPH Call
+Tue Oct 19 13:02:36 2021 - >>> GRAPH Call
+Tue Oct 19 13:02:37 2021 - >>> GRAPH Call
+Tue Oct 19 13:02:40 2021 - Failure LOGIN Request Username:hello Password:
+Tue Oct 19 13:02:40 2021 - >>> GRAPH Call
+Tue Oct 19 13:02:46 2021 - >>> GRAPH Call
+Tue Oct 19 13:02:48 2021 - >>> GRAPH Call
+Tue Oct 19 13:02:49 2021 - >>> GRAPH Call
+Tue Oct 19 13:02:52 2021 - >>> GRAPH Call
+Tue Oct 19 13:02:56 2021 - >>> GRAPH Call
+Tue Oct 19 13:03:00 2021 - >>> GRAPH Call
+Tue Oct 19 13:03:01 2021 - >>> GRAPH Call
+Tue Oct 19 13:03:12 2021 - >>> GRAPH Call
+Tue Oct 19 13:03:16 2021 - >>> GRAPH Call
+Tue Oct 19 13:03:27 2021 - >>> GRAPH Call
+Tue Oct 19 13:03:27 2021 - >>> GRAPH Call
+Tue Oct 19 13:03:34 2021 - >>> GRAPH Call
+Tue Oct 19 13:03:52 2021 - >>> GRAPH Call
+Tue Oct 19 13:03:59 2021 - >>> GRAPH Call
+Tue Oct 19 13:04:08 2021 - >>> GRAPH Call
+Tue Oct 19 13:04:11 2021 - >>> GRAPH Call
+Tue Oct 19 13:04:42 2021 - Rendered root '/'
+Tue Oct 19 13:04:59 2021 - Failure LOGIN Request Username:root Password:
+Tue Oct 19 13:05:07 2021 - Success LOGIN Request Username:root Password:toor
+Tue Oct 19 13:05:15 2021 - Success LOGIN Request Username:root Password:toor
+Tue Oct 19 13:05:24 2021 - Success LOGIN Request Username:root Password:toor
+Tue Oct 19 13:05:30 2021 - >>> Query 11 Call
+Tue Oct 19 13:05:32 2021 - >>> Query 1 Call
+Tue Oct 19 13:05:34 2021 - >>> Query 5 Call
+Tue Oct 19 13:05:35 2021 - >>> Query 4 Call
+Tue Oct 19 13:05:43 2021 - >>> Query 20 Call for:0278
+Tue Oct 19 13:05:44 2021 - >>> Query 20 Call for:0278
+Tue Oct 19 13:07:46 2021 - >>> GRAPH Call
+Tue Oct 19 13:07:57 2021 - >>> GRAPH Call
+Tue Oct 19 13:08:00 2021 - >>> GRAPH Call
+Tue Oct 19 13:08:02 2021 - >>> GRAPH Call
+Tue Oct 19 13:08:12 2021 - Rendered root '/'
+Tue Oct 19 13:08:20 2021 - >>> GRAPH Call
+Tue Oct 19 13:08:21 2021 - Failure LOGIN Request Username:toor Password:
+Tue Oct 19 13:08:23 2021 - >>> GRAPH Call
+Tue Oct 19 13:08:29 2021 - >>> GRAPH Call
+Tue Oct 19 13:08:32 2021 - >>> GRAPH Call
+Tue Oct 19 13:08:32 2021 - Success LOGIN Request Username:root Password:toor
+Tue Oct 19 13:08:37 2021 - >>> GRAPH Call
+Tue Oct 19 13:09:45 2021 - >>> GRAPH Call
+Tue Oct 19 13:09:49 2021 - >>> GRAPH Call
+Tue Oct 19 13:09:50 2021 - Success LOGIN Request Username:root Password:toor
+Tue Oct 19 13:10:28 2021 - >>> GRAPH Call
+Tue Oct 19 13:10:31 2021 - >>> GRAPH Call
+Tue Oct 19 13:10:36 2021 - >>> GRAPH Call
+Tue Oct 19 13:10:40 2021 - >>> GRAPH Call
+Tue Oct 19 13:10:49 2021 - >>> GRAPH Call
+Tue Oct 19 13:11:00 2021 - >>> GRAPH Call
+Tue Oct 19 13:11:01 2021 - Rendered root '/'
+Tue Oct 19 13:11:10 2021 - Failure LOGIN Request Username:root Password:
+Tue Oct 19 13:11:21 2021 - Failure LOGIN Request Username:root Password:fgdgfsd
+Tue Oct 19 13:11:29 2021 - >>> GRAPH Call
+Tue Oct 19 13:11:29 2021 - >>> GRAPH Call
+Tue Oct 19 13:11:34 2021 - >>> GRAPH Call
+Tue Oct 19 13:11:42 2021 - >>> GRAPH Call
+Tue Oct 19 13:12:08 2021 - Failure LOGIN Request Username:root Password:jjhgg
+Tue Oct 19 13:12:18 2021 - >>> GRAPH Call
+Tue Oct 19 13:12:23 2021 - >>> GRAPH Call
+Tue Oct 19 13:13:05 2021 - >>> GRAPH Call
+Tue Oct 19 13:13:12 2021 - >>> GRAPH Call
+Tue Oct 19 13:13:14 2021 - >>> GRAPH Call
+Tue Oct 19 13:13:51 2021 - >>> GRAPH Call
+Tue Oct 19 13:13:59 2021 - >>> GRAPH Call
+Tue Oct 19 13:14:07 2021 - >>> GRAPH Call
+Tue Oct 19 13:14:15 2021 - >>> GRAPH Call
+Tue Oct 19 13:15:49 2021 - >>> GRAPH Call
+Tue Oct 19 13:15:51 2021 - >>> GRAPH Call
+Tue Oct 19 13:15:58 2021 - >>> GRAPH Call
+Tue Oct 19 13:16:42 2021 - >>> GRAPH Call
+Tue Oct 19 13:17:14 2021 - >>> GRAPH Call
+Tue Oct 19 13:17:21 2021 - >>> GRAPH Call
+Tue Oct 19 13:19:19 2021 - >>> GRAPH Call
+Tue Oct 19 13:19:25 2021 - >>> GRAPH Call
+Tue Oct 19 13:19:46 2021 - >>> GRAPH Call
+Tue Oct 19 13:20:05 2021 - >>> GRAPH Call
+Tue Oct 19 13:21:45 2021 - Success LOGIN Request Username:root Password:toor
+Tue Oct 19 13:22:05 2021 - >>> Query 11 Call
+Tue Oct 19 13:22:09 2021 - >>> Query 1 Call
+Tue Oct 19 13:22:21 2021 - >>> Query 20 Call for:0278
+Tue Oct 19 13:22:22 2021 - >>> Query 20 Call for:0278
+Tue Oct 19 13:23:39 2021 - Rendered root '/'
+Tue Oct 19 13:27:45 2021 - Rendered root '/'
+Tue Oct 19 13:39:54 2021 - >>> GRAPH Call
+Tue Oct 19 13:47:08 2021 - Rendered root '/'
+Tue Oct 19 13:55:59 2021 - >>> GRAPH Call
+Tue Oct 19 13:58:20 2021 - >>> GRAPH Call
+Tue Oct 19 13:58:27 2021 - >>> GRAPH Call
+Tue Oct 19 13:58:29 2021 - >>> GRAPH Call
+Tue Oct 19 13:58:39 2021 - >>> GRAPH Call
+Tue Oct 19 13:59:00 2021 - >>> GRAPH Call
+Tue Oct 19 13:59:01 2021 - >>> GRAPH Call
+Tue Oct 19 13:59:03 2021 - >>> GRAPH Call
+Tue Oct 19 13:59:06 2021 - >>> GRAPH Call
+Tue Oct 19 13:59:28 2021 - >>> GRAPH Call
+Tue Oct 19 13:59:31 2021 - >>> GRAPH Call
+Tue Oct 19 13:59:43 2021 - >>> GRAPH Call
+Tue Oct 19 13:59:50 2021 - >>> GRAPH Call
+Tue Oct 19 13:59:53 2021 - >>> GRAPH Call
+Tue Oct 19 13:59:55 2021 - >>> GRAPH Call
+Tue Oct 19 14:00:04 2021 - >>> GRAPH Call
+Tue Oct 19 14:00:41 2021 - >>> GRAPH Call
+Tue Oct 19 14:00:45 2021 - >>> GRAPH Call
+Tue Oct 19 14:02:43 2021 - >>> GRAPH Call
+Tue Oct 19 14:02:44 2021 - >>> GRAPH Call
+Tue Oct 19 14:02:55 2021 - >>> GRAPH Call
+Tue Oct 19 14:03:05 2021 - >>> GRAPH Call
+Tue Oct 19 14:03:38 2021 - >>> GRAPH Call
+Tue Oct 19 14:03:40 2021 - >>> GRAPH Call
+Tue Oct 19 14:03:43 2021 - >>> GRAPH Call
+Tue Oct 19 14:03:48 2021 - >>> GRAPH Call
+Tue Oct 19 14:03:51 2021 - >>> GRAPH Call
+Tue Oct 19 14:03:54 2021 - >>> GRAPH Call
+Tue Oct 19 14:03:59 2021 - >>> GRAPH Call
+Tue Oct 19 14:05:43 2021 - >>> GRAPH Call
+Tue Oct 19 14:06:26 2021 - >>> GRAPH Call
+Tue Oct 19 14:06:34 2021 - >>> GRAPH Call
+Tue Oct 19 14:06:35 2021 - >>> GRAPH Call
+Tue Oct 19 14:07:01 2021 - >>> GRAPH Call
+Tue Oct 19 14:07:04 2021 - >>> GRAPH Call
+Tue Oct 19 14:07:06 2021 - >>> GRAPH Call
+Tue Oct 19 14:07:17 2021 - >>> GRAPH Call
+Tue Oct 19 14:07:30 2021 - >>> GRAPH Call
+Tue Oct 19 14:08:28 2021 - >>> GRAPH Call
+Tue Oct 19 14:08:40 2021 - >>> GRAPH Call
+Tue Oct 19 14:09:55 2021 - >>> GRAPH Call
+Tue Oct 19 14:11:08 2021 - >>> GRAPH Call
+Tue Oct 19 14:11:08 2021 - >>> GRAPH Call
+Tue Oct 19 14:12:31 2021 - >>> GRAPH Call
+Tue Oct 19 14:12:34 2021 - >>> GRAPH Call
+Tue Oct 19 14:12:54 2021 - >>> GRAPH Call
+Tue Oct 19 14:12:55 2021 - >>> GRAPH Call
+Tue Oct 19 14:12:59 2021 - >>> GRAPH Call
+Tue Oct 19 14:14:19 2021 - >>> GRAPH Call
+Tue Oct 19 14:14:45 2021 - >>> GRAPH Call
+Tue Oct 19 14:14:45 2021 - Success LOGIN Request Username:root Password:toor
+Tue Oct 19 14:14:47 2021 - >>> GRAPH Call
+Tue Oct 19 14:14:54 2021 - >>> GRAPH Call
+Tue Oct 19 14:15:27 2021 - >>> GRAPH Call
+Tue Oct 19 14:15:32 2021 - >>> GRAPH Call
+Tue Oct 19 14:15:38 2021 - >>> GRAPH Call
+Tue Oct 19 14:16:04 2021 - >>> GRAPH Call
+Tue Oct 19 14:16:11 2021 - >>> GRAPH Call
+Tue Oct 19 14:16:12 2021 - >>> GRAPH Call
+Tue Oct 19 14:16:17 2021 - >>> GRAPH Call
+Tue Oct 19 14:16:29 2021 - >>> GRAPH Call
+Tue Oct 19 14:16:31 2021 - >>> GRAPH Call
+Tue Oct 19 14:16:32 2021 - >>> GRAPH Call
+Tue Oct 19 14:16:42 2021 - >>> GRAPH Call
+Tue Oct 19 14:16:43 2021 - >>> GRAPH Call
+Tue Oct 19 14:16:54 2021 - >>> GRAPH Call
+Tue Oct 19 14:17:04 2021 - >>> GRAPH Call
+Tue Oct 19 14:17:08 2021 - >>> GRAPH Call
+Tue Oct 19 14:17:14 2021 - >>> GRAPH Call
+Tue Oct 19 14:17:21 2021 - >>> GRAPH Call
+Tue Oct 19 14:17:26 2021 - >>> GRAPH Call
+Tue Oct 19 14:17:29 2021 - >>> GRAPH Call
+Tue Oct 19 14:17:30 2021 - >>> GRAPH Call
+Tue Oct 19 14:17:32 2021 - >>> GRAPH Call
+Tue Oct 19 14:17:35 2021 - >>> GRAPH Call
+Tue Oct 19 14:18:40 2021 - >>> GRAPH Call
+Tue Oct 19 14:18:43 2021 - >>> GRAPH Call
+Tue Oct 19 14:19:30 2021 - Rendered root '/'
+Tue Oct 19 14:20:16 2021 - Success LOGIN Request Username:root Password:toor
+Tue Oct 19 14:22:39 2021 - Rendered root '/'
+Tue Oct 19 14:24:53 2021 - >>> GRAPH Call
+Tue Oct 19 14:25:31 2021 - >>> GRAPH Call
+Tue Oct 19 14:25:33 2021 - >>> GRAPH Call
+Tue Oct 19 14:25:35 2021 - >>> GRAPH Call
+Tue Oct 19 14:25:38 2021 - >>> GRAPH Call
+Tue Oct 19 14:25:44 2021 - >>> GRAPH Call
+Tue Oct 19 14:25:48 2021 - >>> GRAPH Call
+Tue Oct 19 14:25:52 2021 - >>> GRAPH Call
+Tue Oct 19 14:25:56 2021 - >>> GRAPH Call
+Tue Oct 19 14:25:57 2021 - >>> GRAPH Call
+Tue Oct 19 14:26:01 2021 - >>> GRAPH Call
+Tue Oct 19 14:26:10 2021 - >>> GRAPH Call
+Tue Oct 19 14:26:36 2021 - >>> GRAPH Call
+Tue Oct 19 14:26:48 2021 - >>> GRAPH Call
+Tue Oct 19 14:26:56 2021 - >>> GRAPH Call
+Tue Oct 19 14:26:56 2021 - >>> GRAPH Call
+Tue Oct 19 14:26:58 2021 - >>> GRAPH Call
+Tue Oct 19 14:27:03 2021 - >>> GRAPH Call
+Tue Oct 19 14:27:14 2021 - >>> GRAPH Call
+Tue Oct 19 14:27:18 2021 - >>> GRAPH Call
+Tue Oct 19 14:27:19 2021 - >>> GRAPH Call
+Tue Oct 19 14:27:22 2021 - >>> GRAPH Call
+Tue Oct 19 14:30:07 2021 - >>> GRAPH Call
+Tue Oct 19 14:30:08 2021 - >>> GRAPH Call
+Tue Oct 19 14:30:11 2021 - >>> GRAPH Call
+Tue Oct 19 14:30:11 2021 - >>> GRAPH Call
+Tue Oct 19 14:31:45 2021 - >>> GRAPH Call
+Tue Oct 19 14:32:24 2021 - >>> GRAPH Call
+Tue Oct 19 18:19:28 2021 - >>> GRAPH Call
+Tue Oct 19 18:19:47 2021 - >>> GRAPH Call
+Tue Oct 19 18:21:14 2021 - >>> GRAPH Call
+Tue Oct 19 18:21:23 2021 - >>> GRAPH Call
+Tue Oct 19 18:21:36 2021 - >>> GRAPH Call
+Tue Oct 19 18:21:45 2021 - >>> GRAPH Call
+Tue Oct 19 18:21:49 2021 - >>> GRAPH Call
+Tue Oct 19 18:22:33 2021 - >>> GRAPH Call
+Tue Oct 19 18:22:49 2021 - >>> GRAPH Call
+Tue Oct 19 18:23:12 2021 - >>> GRAPH Call
+Tue Oct 19 18:23:19 2021 - >>> GRAPH Call
+Tue Oct 19 18:23:25 2021 - >>> GRAPH Call
+Tue Oct 19 18:23:31 2021 - >>> GRAPH Call
+Tue Oct 19 18:23:35 2021 - >>> GRAPH Call
+Tue Oct 19 18:23:38 2021 - >>> GRAPH Call
+Tue Oct 19 18:23:57 2021 - >>> GRAPH Call
+Tue Oct 19 18:24:01 2021 - >>> GRAPH Call
+Tue Oct 19 18:24:10 2021 - >>> GRAPH Call
+Tue Oct 19 18:25:32 2021 - >>> GRAPH Call
+Tue Oct 19 18:25:33 2021 - >>> GRAPH Call
+Tue Oct 19 18:25:48 2021 - >>> GRAPH Call
+Tue Oct 19 18:25:57 2021 - >>> GRAPH Call
+Tue Oct 19 18:26:16 2021 - >>> GRAPH Call
+Tue Oct 19 18:26:16 2021 - >>> GRAPH Call
+Tue Oct 19 18:27:07 2021 - >>> GRAPH Call
+Tue Oct 19 18:28:48 2021 - >>> GRAPH Call
+Tue Oct 19 18:29:21 2021 - Failure LOGIN Request Username:erw Password:qwe
+Tue Oct 19 18:29:22 2021 - Rendered root '/'
+Tue Oct 19 18:29:28 2021 - Failure LOGIN Request Username:root Password:sdasadsad
+Tue Oct 19 18:29:45 2021 - Success LOGIN Request Username:root Password:toor
+Tue Oct 19 18:36:17 2021 - >>> GRAPH Call
+Tue Oct 19 18:36:35 2021 - >>> GRAPH Call
+Tue Oct 19 18:36:51 2021 - >>> GRAPH Call
+Tue Oct 19 18:36:52 2021 - >>> GRAPH Call
+Tue Oct 19 18:36:54 2021 - >>> GRAPH Call
+Tue Oct 19 18:37:03 2021 - >>> GRAPH Call
+Tue Oct 19 18:37:06 2021 - >>> GRAPH Call
+Tue Oct 19 18:37:18 2021 - >>> GRAPH Call
+Tue Oct 19 18:37:23 2021 - >>> GRAPH Call
+Tue Oct 19 18:37:30 2021 - >>> GRAPH Call
+Tue Oct 19 18:37:34 2021 - >>> GRAPH Call
+Tue Oct 19 18:37:46 2021 - >>> GRAPH Call
+Tue Oct 19 18:37:49 2021 - >>> GRAPH Call
+Tue Oct 19 18:37:55 2021 - >>> GRAPH Call
+Tue Oct 19 18:37:57 2021 - >>> GRAPH Call
+Tue Oct 19 18:38:22 2021 - >>> GRAPH Call
+Tue Oct 19 18:39:32 2021 - Success LOGIN Request Username:root Password:toor
+Tue Oct 19 18:39:43 2021 - ### Files Deleted ###
+Tue Oct 19 18:40:36 2021 - /° Multiple Files Upload Start
+Tue Oct 19 18:40:36 2021 - | CDRData Saved 798234523
+Tue Oct 19 18:40:38 2021 - | CDRData added to Database
+Tue Oct 19 18:40:39 2021 - \. Multiple Files Uploaded - 1
+Tue Oct 19 18:43:20 2021 - >>> GRAPH Call
+Tue Oct 19 18:44:35 2021 - >>> GRAPH Call
