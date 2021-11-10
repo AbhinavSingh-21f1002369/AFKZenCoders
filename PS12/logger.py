@@ -1,6 +1,6 @@
 import time
 from discord import Webhook, RequestsWebhookAdapter
-url = "https://discord.com/api/webhooks/898895725046427718/ccEL0VVOzKkd6Fz6Z0SSI3xRbGPZyHkR1pYBHa_tFA-DIWje0LjyfZMFCJk3MOBUf2Sh" 
+url = "https://discordapp.com/api/webhooks/908007946145894400/tWV3jlRjESxknpuXTHoeKjCb8ToBWQCpY6y1gE9Y_mmF7hKGVznLEsrkzfa-hQZDc66C" 
 webhook = Webhook.from_url(url, adapter=RequestsWebhookAdapter())
 
 def logit(message):

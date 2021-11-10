@@ -48,7 +48,19 @@ def uploader():
    logger.logit(f"/° Multiple Files Upload Start")
    for file in uploaded_files:
       filename = secure_filename(file.filename)
-      if filename=="7982345234.csv":
+      if filename=="917982345234.csv":
+         path = os.path.join(app.config['UPLOAD_FOLDER'],filename)
+         file.save(path)
+         number = filename[0:9]
+         logger.logit(f"| CDRData Saved {number}")
+         utilities.addCDRData(path,number)
+      elif filename=="918367448476.csv":
+         path = os.path.join(app.config['UPLOAD_FOLDER'],filename)
+         file.save(path)
+         number = filename[0:9]
+         logger.logit(f"| CDRData Saved {number}")
+         utilities.addCDRData(path,number)
+      elif filename=="916100080762.csv":
          path = os.path.join(app.config['UPLOAD_FOLDER'],filename)
          file.save(path)
          number = filename[0:9]
