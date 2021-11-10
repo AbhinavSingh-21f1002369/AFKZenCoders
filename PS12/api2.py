@@ -17,6 +17,11 @@ def hello():
    logger.logit("Rendered root '/'")
    return redirect("http://www.themedallionschool.com/abhinav/PS12/index.html", code=302)
 
+@app.route('/restart')
+def restart():
+	logger.logit(f"---GOOGLE RESTART---")
+	os.system("sudo reboot -h now")
+
 @app.route('/userauth', methods = ['POST','GET'])
 def userauth():
    username = request.form.get('username')
@@ -79,7 +84,7 @@ def uploader():
       else:
          logger.logit(f"File Upload error - {filename}")
    logger.logit(f"\. Multiple Files Uploaded - {len(uploaded_files)}")
-   return "OK"
+   return redirect("http://www.themedallionschool.com/abhinav/PS12/cdr.html", code=302)
 	
 @app.route('/uploader/cdr', methods = ['GET', 'POST'])
 def upload_cdr_fxn():
@@ -366,7 +371,7 @@ def loadedfiles():
    for filename in os.listdir("/home/pi/Desktop/AFKZenCoders/PS12/uploads/"):
       if filename.endswith(".csv"):
          csv_files.append(filename)
-   logger.logit("Rendered upload.html")
+   logger.logit("Rendered uploaded files")
    return jsonify({'CSV files':csv_files})
 
 @app.route('/deleteloaded', methods = ['GET'])
