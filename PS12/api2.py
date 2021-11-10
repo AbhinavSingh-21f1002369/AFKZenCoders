@@ -377,6 +377,22 @@ def query_20():
    logger.logit(fString)
    return jsonify(response)
 
+@app.route('/query/100/', methods = ['GET'])
+def query_100():
+   # Parsing the Headers
+   IMEI = request.args.get('imei')
+   query = f'SELECT * from FIR WHERE FIR_No={int(fir)}'
+   result = queries.runQuery(query)
+   #print(result)
+   headers = ["FIR No","District","PS ID","Time of FIR","Complainant","Act","Section","Complainant Mobile Number"]
+   if len(result) != 0:
+      response = {'headers':headers,'rows':result}
+   else:
+      response = {'headers':["No Data Available"],'rows':[]}
+   fString = f">>> Query 100 Call IMEI:{imei}"
+   logger.logit(fString)
+   return jsonify(response)
+
 @app.route('/loadedfiles', methods = ['GET'])
 def loadedfiles():
    csv_files = []
