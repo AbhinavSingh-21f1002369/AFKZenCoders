@@ -237,3 +237,10 @@ Thu Nov 11 10:32:03 2021 - ### Files Deleted ###
 Thu Nov 11 10:32:15 2021 - Successfull logout
 Thu Nov 11 10:32:17 2021 - Session does not exist
 Thu Nov 11 10:32:18 2021 - Rendered root '/'
+Thu Nov 11 10:41:48 2021 - Rendered upload.html
+Thu Nov 11 10:42:05 2021 - /° Multiple Files Upload Start
+Thu Nov 11 10:42:06 2021 - | CDRData Saved 610008076
+Thu Nov 11 10:42:08 2021 - | CDRData 610008076 added to Database
+Thu Nov 11 10:42:09 2021 - \. Multiple Files Uploaded - 1
+Thu Nov 11 10:43:00 2021 - Session does not exist
+Thu Nov 11 10:43:00 2021 - Rendered root '/'

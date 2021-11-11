@@ -446,8 +446,8 @@ def query_101():
    resultset = queries.runQuery(unique_imeis_query)
    for results in resultset:
       print(results)
-      #unique_imsi_query = f'SELECT DISTINCT imsi from CallData having imei={results}'
-      
+      #unique_imsi_query = f'SELECT * from CallData where imei={results}'
+   return ("OK", code=200)  
    #unique_imsi = 
 
 @app.route('/loadedfiles', methods = ['GET'])
