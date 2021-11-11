@@ -1,34 +1,132 @@
-<html>
-   <body>
-      <form action = "http://iot.ccnet.in:1313/uploader/cdr" method = "POST" 
-         enctype = "multipart/form-data">
-         <input type = "file" name = "file" >CDR</input>
-         <input type = "submit"/>
-      </form><br>
-      <form action = "http://iot.ccnet.in:1313/uploader/thana" method = "POST" 
-         enctype = "multipart/form-data">
-         <input type = "file" name = "file" >Thana</input>
-         <input type = "submit"/>
-      </form><br>
-      <form action = "http://iot.ccnet.in:1313/uploader/bankacc" method = "POST" 
-         enctype = "multipart/form-data">
-         <input type = "file" name = "file" >Bank Acc</input>
-         <input type = "submit"/>
-      </form><br>
-      <form action = "http://iot.ccnet.in:1313/uploader/cgi" method = "POST" 
-         enctype = "multipart/form-data">
-         <input type = "file" name = "file" >CGI</input>
-         <input type = "submit"/>
-      </form><br>
-      <form action = "http://iot.ccnet.in:1313/uploader/fir" method = "POST" 
-         enctype = "multipart/form-data">
-         <input type = "file" name = "file" >FIR</input>
-         <input type = "submit"/>
-      </form><br>
-      <form action = "http://iot.ccnet.in:1313/uploader/thanalist" method = "POST" 
-         enctype = "multipart/form-data">
-         <input type = "file" name = "file" >Thana List</input>
-         <input type = "submit"/>
-      </form>
-   </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<!---------- font awesome cdn link --------------------> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css ">
+ <!-------------- Custom CSS Link ---------------->  
+    <link rel="stylesheet" href="{{ url_for('static', filename='upload.css') }}">
+    <title>Uttarakhand Police | Database Manager</title>
+
+</head>
+<body>
+<!-------------- Header Section Starts -------------->
+        <header class="header">
+            <a href="#" class="logo"><h1>Uttarakhand Police, <br>Govt of Uttarakhand</h1>
+            <nav class="navbar">
+                <a href="http://iot.ccnet.in:1313/page_cdr">CDR Analysis</a>
+                <a href="#">FIR Analysis</a>
+                <a href="http://iot.ccnet.in:1313/logout"><ion-icon name="person"></ion-icon> Sign out</a>
+            </nav>
+            
+            <div id="menu-btn" class="fas fa-bars"></div>    
+        </header>
+<!-------------- Header Section Ends -------------->
+
+
+<!-------------- Home Section Starts -------------->
+    <section class ="home" id="home">
+
+        <div class="content">
+            <div class="upload" id="up_1">
+                <h2 style="text-align: center; padding-top: 1rem;">Welcome to the Database uploader, Uttarakhand Police</h2><br>
+                <h3 style="text-align: center; font-size: 2rem;">Upload all the dataset in csv format</h3>
+            </div>
+            
+            
+            <div class="upload" id="up_2">
+                <form name="db_uploader" action="http://iot.ccnet.in:1313/uploader" method = "POST" id = "db_uploader" enctype = "multipart/form-data">
+                    <!-- <div class="cdr">
+                        Enter the phone number:
+                        <input type="text" name="number" id = "mob_num">
+                    </div> -->
+                    
+                    <div class="cdr">
+                       <input type = "file" name = "file" id ="file1" hidden/> 
+                       <label for="file1" id="selector1">Upload CDR</label>
+                    </div>
+                    <div class="cdr">
+                        <input type = "file" name = "file" id ="file2" hidden/> 
+                        <label for="file2" id="selector2">Upload CGI</label>
+                     </div>
+                     <div class="cdr">
+                        <input type = "file" name = "file" id ="file3" hidden/> 
+                        <label for="file3" id="selector3">Upload FIR</label>
+                     </div>
+                     <div class="cdr">
+                        <input type = "file" name = "file" id ="file4" hidden/> 
+                        <label for="file4" id="selector4">Upload Bank Details</label>
+                     </div>
+                     <div class="cdr">
+                        <input type = "file" name = "file" id ="file5" hidden/> 
+                        <label for="file5" id="selector5">Upload Police Station List</label>
+                     </div>
+                     <div class="cdr">
+                        <input type = "file" name = "file" id ="file6" hidden/> 
+                        <label for="file6" id="selector6">Upload PS List of District </label>
+                     </div>
+                     <!-- <div class="button">
+                        <input type="submit" value="submit" id ="btn1" hidden disabled='disabled'/>
+                        <label for="btn1" id="btn1">UPLOAD FILES</label>
+                        
+                     </div>
+                     -->
+                </form>
+                <div class="button">
+                    <button type="submit" form="db_uploader" id="btn1">Upload Files</button>
+
+                    <button onclick="deletebtn()" id="btn2">Delete Existing</button>
+                </div>
+                
+            </div>
+           
+        </div>
+
+        </div>
+    </section>
+<!-------------- Home Section Ends -------------->
+
+
+<!--------------JavaScript Starts -------------->
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<script>
+    //-------------------------- Upload Functionality starts---------------------------//
+    document.getElementById('btn1').onclick = function fun_upload() {
+        
+        var x = document.forms['db_uploader']['number'].value;
+
+        var url = "http://iot.ccnet.in:1313/uploader";
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.send();
+    }
+    //-------------------------- Upload Functionality Ends---------------------------//
+
+    //-------------------------- Delete_db Functionality starts---------------------------//
+
+    function deletebtn(){
+        var confirmation_msg = confirm("You want to delete all the existing files from the database?");
+        if(confirmation_msg == true){
+            fetch("http://iot.ccnet.in:1313/deleteloaded");
+            alert("Files Deleted Successfully");
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    //-------------------------- Delete_db Functionality Ends---------------------------//
+</script>
+
+
+<!-- Icons -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<!--------------JavaScript Ends -------------->
+
+</body>
 </html>

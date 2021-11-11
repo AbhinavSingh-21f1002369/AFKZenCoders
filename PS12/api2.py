@@ -1,21 +1,28 @@
-from flask import Flask, render_template, request, jsonify,send_file, redirect
+from flask import Flask, render_template, request, jsonify,send_file, redirect,session, url_for
 from werkzeug import secure_filename
 import os
 import utilities, queries
 import logger
 from flask_cors import CORS, cross_origin
+from datetime import timedelta
 app = Flask(__name__)
 CORS(app)
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
 UPLOAD_FOLDER = '/home/pi/Desktop/AFKZenCoders/PS12/uploads/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['CORS_HEADERS'] = 'Content-Type'
-
+app.secret_key = "AFKZenCodersAAS"
+app.permanent_session_lifetime = timedelta(minutes=60)
 
 @app.route('/')
 def hello():
-   logger.logit("Rendered root '/'")
-   return redirect("http://www.themedallionschool.com/abhinav/PS12/index.html", code=302)
+   if "username" in session:
+      logger.logit("Rendered upload.html - test wali")
+      return render_template('upload.html')
+   else:
+      logger.logit("Session does not exist")
+      logger.logit("Rendered root '/'")
+      return render_template('index.html')
 
 @app.route('/restart')
 def restart():
@@ -28,11 +35,49 @@ def userauth():
    password = request.form.get('password')
    if username=="root" and password=="toor":
       logger.logit(f"Success LOGIN Request Username:{username} Password:{password}")
-      return redirect("http://www.themedallionschool.com/abhinav/PS12/upload.html", code=302)
+      session["username"] = username
+      session.permanent = True
+      return redirect(url_for("page_upload"))
    else:
       logger.logit(f"Failure LOGIN Request Username:{username} Password:{password}")
       return redirect("http://www.themedallionschool.com/abhinav/PS12/incorrect.html", code=302)
 
+@app.route('/page_upload')
+def page_upload():
+   if "username" in session:
+      logger.logit("Rendered upload.html")
+      return render_template('upload.html')
+   else:
+      logger.logit("Session does not exist")
+      return redirect("/")
+
+@app.route('/page_cdr')
+def page_cdr():
+   if "username" in session:
+      logger.logit("Rendered cdr.html")
+      return render_template('cdr.html')
+   else:
+      logger.logit("Session does not exist")
+      return redirect("/")
+
+@app.route('/page_fir')
+def page_fir():
+   if "username" in session:
+      logger.logit("Rendered fir.html")
+      return render_template('fir.html')
+   else:
+      logger.logit("Session does not exist")
+      return redirect("/")
+
+@app.route('/logout')
+def logout():
+   if "username" in session:
+      session.pop("username", None)
+      logger.logit("Successfull logout")
+      return redirect("/")
+   else:
+      logger.logit("Session does not exist")
+      return redirect("/")
 
 @app.route('/upload')
 def upload_file():
@@ -51,19 +96,19 @@ def uploader():
       if filename=="917982345234.csv":
          path = os.path.join(app.config['UPLOAD_FOLDER'],filename)
          file.save(path)
-         number = filename[0:9]
+         number = filename[2:11]
          logger.logit(f"| CDRData Saved {number}")
          utilities.addCDRData(path,number)
       elif filename=="918367448476.csv":
          path = os.path.join(app.config['UPLOAD_FOLDER'],filename)
          file.save(path)
-         number = filename[0:9]
+         number = filename[2:11]
          logger.logit(f"| CDRData Saved {number}")
          utilities.addCDRData(path,number)
       elif filename=="916100080762.csv":
          path = os.path.join(app.config['UPLOAD_FOLDER'],filename)
          file.save(path)
-         number = filename[0:9]
+         number = filename[2:11]
          logger.logit(f"| CDRData Saved {number}")
          utilities.addCDRData(path,number)
       elif filename=="CGI_Dataset.csv":
@@ -96,7 +141,7 @@ def uploader():
       else:
          logger.logit(f"File Upload error - {filename}")
    logger.logit(f"\. Multiple Files Uploaded - {len(uploaded_files)}")
-   return redirect("http://www.themedallionschool.com/abhinav/PS12/cdr.html", code=302)
+   return render_template('cdr.html')
 	
 @app.route('/uploader/cdr', methods = ['GET', 'POST'])
 def upload_cdr_fxn():
@@ -392,6 +437,18 @@ def query_100():
    fString = f">>> Query 100 Call IMEI:{imei}"
    logger.logit(fString)
    return jsonify(response)
+
+@app.route('/query/101/', methods = ['GET'])
+def query_101():
+   #unique IMEIs
+   IMEI = []
+   unique_imeis_query = f'SELECT DISTINCT imei FROM CallData'
+   resultset = queries.runQuery(unique_imeis_query)
+   for results in resultset:
+      print(results)
+      #unique_imsi_query = f'SELECT DISTINCT imsi from CallData having imei={results}'
+      
+   #unique_imsi = 
 
 @app.route('/loadedfiles', methods = ['GET'])
 def loadedfiles():

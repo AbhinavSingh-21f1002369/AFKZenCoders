@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+
+    <title>Authentication | Uttarakhand Police</title>
+</head>
+<body>
+    <div class="main_container">
+        <div class="main_wrapper">
+            <div class="home">
+                <h1>Welcome to the Analysis Tool</h1><br>
+                <h2>Before stepping in, get your authentication check done!</h2><br>
+             
+            </div>
+            <div class="login_wrap">
+ 
+
+                <div class="heading">
+                    <p>AUTHENTICATION</p>
+                </div>
+                <form name="login" action="http://iot.ccnet.in:1313/userauth" method="post">
+                    <label for="usr"> <ion-icon name="person-circle"></ion-icon> Authorized Username </label>
+                    <input type="text" id="usr" name="username" placeholder="Enter an authentic username" required />
+                    <label for="pass"> <ion-icon name="finger-print"></ion-icon> Authorized Password </label>
+                    <input type="password" id="pass" name="password" placeholder="Enter an authentic password" required />
+                    <input type="submit" name="login_btn" id="login_btn" value = "Authenticate">
+                </form>
+            </div>
+        </div>
+    </div>  
+    
+<!-- Icons -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

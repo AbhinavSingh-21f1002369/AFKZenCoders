@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fir.css') }}">
+
+    <!-- font awesome cdn link --> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css ">
+
+    <title>Uttarakhand Police | FIR Analysis</title>
+</head>
+<body>
+    <!-- Header Section Starts -->
+    <header class="header">
+        <a href="#" class="logo"><h1>Uttarakhand Police, <br>Govt of Uttarakhand</h1></a>
+        <nav class="navbar">
+            <a href="http://iot.ccnet.in:1313/page_upload">Database Manager</a>
+            <a href="http://iot.ccnet.in:1313/page_cdr">CDR Analysis</a>
+            <a href="http://iot.ccnet.in:1313/logout"><ion-icon name="person"></ion-icon> Sign out</a>
+        </nav>
+        
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </header>
+<!-- Header Section ends -->
+
+<!------------- Home Section Starts ---------------->
+<section class ="home" id="home">
+
+    <div class="content">
+        <div class="upload" id="up_1">
+            <h2 style="text-align: center; padding-top: 1rem;">FIR Records</h2><br>
+        </div>
+        <form name="fir_filter">
+            <label for="fir_num" id="fir_lb">Enter the FIR number:</label> 
+            <input type="text" name="fir" id="fir_num">
+            <input type="button" id="fir_btn" onclick="fun_fir()" value="Search" />
+        </form>
+    
+        <div class="filter_result1">
+            <table class="table" id="fir_table">
+                <thead></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+</section>
+<!----------Home Section Ends----------------->
+
+
+<!-- ------------JavaScript Starts------------- -->
+
+<script>
+    //-------------------------- Populating table Functionality starts---------------------------//    
+    async function loadIntoTable(url, table){
+        const tableHead = table.querySelector("thead");
+        const tableBody = table.querySelector("tbody");
+        const response = await fetch(url);
+        const { headers, rows } = await response.json();
+
+        // Clear the table
+        tableHead.innerHTML = "<tr></tr>";
+        tableBody.innerHTML = "";
+
+        // Populate the headers
+        for (const headerText of headers) {
+            const headerElement = document.createElement("th");
+
+            headerElement.textContent = headerText;
+            tableHead.querySelector("tr").appendChild(headerElement);
+        }
+
+        // Populate rows
+        for (const row of rows) {
+            const rowElement = document.createElement("tr");
+
+            for (const cellText of row) {
+                const cellElement = document.createElement("td");
+
+                cellElement.textContent = cellText;
+                rowElement.appendChild(cellElement);
+            }
+
+            tableBody.appendChild(rowElement);
+        }
+    }
+    //-------------------------- Populating table Functionality ends---------------------------//
+    
+    //-------------------------- FIR Search Functionality starts---------------------------//
+    window.onload = function(){
+        document.getElementById('fir_btn').onclick = function fun_fir() {
+            
+            var x = document.forms['fir_filter']['fir'].value;
+           
+            var url = "http://iot.ccnet.in:1313/query/20/?fir=" + x;
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.send();
+            
+            xhr.onreadystatechange = processRequest;
+            
+            function processRequest(e) {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var response1 = JSON.parse(xhr.responseText);
+                    loadIntoTable(url, document.querySelector("#fir_table"))
+                }
+            }           
+        }   
+    }
+    //-------------------------- FIR Search Functionality ends---------------------------//
+
+
+</script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <!-- Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

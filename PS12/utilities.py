@@ -135,6 +135,20 @@ def addCDRData(CSVpath,number):
     "smsc" TEXT,
     "roam_nw" TEXT
     )""")
+    cur.execute(f"""CREATE TABLE IF NOT EXISTS 'data_{number}' (
+    "calling_number" TEXT,
+    "called_number" TEXT,
+    "start_time" DATETIME,
+    "end_time" DATETIME,
+    "duration" INT,
+    "cell1" TEXT,
+    "cell2" TEXT,
+    "cell_type" TEXT,
+    "imei" TEXT,
+    "imsi" TEXT,
+    "smsc" TEXT,
+    "roam_nw" TEXT
+    )""")
 
     with open(CSVpath) as csv_file:
         count = 0
@@ -203,8 +217,9 @@ def addCDRData(CSVpath,number):
                 total += 1
             ##################
             cur.execute("INSERT INTO CallData (calling_number,called_number,start_time,end_time,duration,cell1,cell2,cell_type,imei,imsi,smsc,roam_nw) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",(calling_number,called_number,start_time,end_time,duration,cell1,cell2,cell_type,imei,imsi,smsc,roam_nw))
+            cur.execute(f"INSERT INTO data_{number} (calling_number,called_number,start_time,end_time,duration,cell1,cell2,cell_type,imei,imsi,smsc,roam_nw) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",(calling_number,called_number,start_time,end_time,duration,cell1,cell2,cell_type,imei,imsi,smsc,roam_nw))
             conn.commit()
-    logger.logit("| CDRData added to Database")
+    logger.logit(f"| CDRData {number} added to Database")
     conn.close()
 
 def addBankData(CSVpath):

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='cdr.css') }}">
+
+    <!-- font awesome cdn link --> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css ">
+
+    <title>Uttarakhand Police | CDR Analysis</title>
+</head>
+<body>
+    
+<!-- Header Section Starts -->
+    <header class="header">
+        <a href="#" class="logo"><h1>Uttarakhand Police, <br>Govt of Uttarakhand</h1></a>
+        <nav class="navbar">
+            <a href="http://iot.ccnet.in:1313/page_upload">Database Manager</a>
+            <a href="#">FIR Analysis</a>
+            <a href="http://iot.ccnet.in:1313/logout"><ion-icon name="person"></ion-icon> Sign out</a>
+        </nav>
+        
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </header>
+<!-- Header Section ends -->
+
+<!-- Home Section Starts -->
+<section class = "home" id="home">
+    <div class="content">
+        <div class="accordion" id="up_1">
+            <div class="acc_item" id="filter1">
+                <a class="acc_link" href="#filter1">
+                    <h3>Search all the records of a number <em>(based on CDR uploaded)</em></h3>
+                </a>
+                <div class="content_box">
+                    <form name="filter1" id="filter1">
+                        <label for="mob_lb">Enter the mobile number:</label>
+                        <input type="text" name="number" id="mob_lb" />
+                        <input type="button" id="filter_btn1" onclick="fun()" value="Search" />
+                            
+                    </form>
+                    <div class="filter_result1">
+                        <table class="table" id="one">
+                            <thead></thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="acc_item" id="filter2">
+                <a class = "acc_link" href="#filter2">
+                    <h3>Search all the records between specified dates</h3>
+                </a>
+                <div class="content_box">
+                    <form name="filter2" id="filter2">
+                        <label for="dt1" id="dt1_lb">From:</label>
+                        <input type="date" name="since" id="dt1">
+                        <label for="dt2" id="dt2_lb">To:</label>
+                        <input type="date" name="till" id="dt2">
+                        <button type="button" onclick="fun2()" id="filter_btn2">
+                            Search
+                        </button>
+                    </form>
+                    <div class="filter_result1">
+                        <table class="table" id="two">
+                            <thead></thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- <div class="acc_item" id="filter3">
+                <a class = "acc_link" href="#filter3">
+                    <h3>Search all the records of a specified date</h3>
+                </a>
+                <div class="content_box">
+                    <form name="filter3" id="filter3">
+                        <label for="date_box" id = "date_lb">Enter the Date:</label>
+                        <input type="date" name="date" id="date_box" />
+                        <input type="button" id="filter_btn3" onclick="fun3()" value="Search" />
+                    </form>
+                    <div class="filter_result1">
+                        <table class="table" id="three">
+                            <thead></thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="acc_item" id="filter4">
+                <a class = "acc_link" href="#filter4">
+                    <h3>Search all distinct calls, longest calls and other queries</em></h3>
+                </a>
+                <div class="content_box">
+                    <div class="filter4">
+                        <button type="submit" action="#" id="btn1">Frequenlty Dialled calls</button>
+                        <button type="submit" action="#" id="btn2">Frequenlty Recieved calls</button>
+                        <button type="submit" action="#" id="btn3">Longest Calls</button>
+                        <button type="submit"  id="btn4">Distinct calls</button>
+                        <button type="submit"  id="btn5"><a href="graph.html" id="graph">Graph</a></button>
+
+                    </div>
+                
+                    <div class="filter_result1">
+                        <table class="table" id="five">
+                            <thead></thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                
+            </div>
+        </div> -->
+    </div>
+
+
+
+ 
+    </div>
+</section>
+<!-- Home Section Ends -->
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<script>
+
+    //-------------------------- Populating table Functionality starts---------------------------//
+    
+        async function loadIntoTable(url, table){
+                const tableHead = table.querySelector("thead");
+                const tableBody = table.querySelector("tbody");
+                const response = await fetch(url);
+                const { headers, rows } = await response.json();
+    
+                // Clear the table
+                tableHead.innerHTML = "<tr></tr>";
+                tableBody.innerHTML = "";
+    
+                // Populate the headers
+                for (const headerText of headers) {
+                    const headerElement = document.createElement("th");
+    
+                    headerElement.textContent = headerText;
+                    tableHead.querySelector("tr").appendChild(headerElement);
+                }
+    
+                // Populate rows
+                for (const row of rows) {
+                    const rowElement = document.createElement("tr");
+    
+                    for (const cellText of row) {
+                        const cellElement = document.createElement("td");
+    
+                        cellElement.textContent = cellText;
+                        rowElement.appendChild(cellElement);
+                    }
+    
+                    tableBody.appendChild(rowElement);
+                }
+            }
+    //-------------------------- Populating table Functionality ends---------------------------//
+    
+    
+    //-------------------------- Filter1 Functionality starts---------------------------//
+    
+            // window.onload = function(){
+            document.getElementById('filter_btn1').onclick = function fun() {
+    
+                var x = document.forms['filter1']['number'].value;
+                
+                var url = "http://iot.ccnet.in:1313/query/12/?number=" + x;
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', url, true);
+                xhr.send();
+                
+                xhr.onreadystatechange = processRequest;
+                
+                function processRequest(e) {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        var response1 = JSON.parse(xhr.responseText);
+                        loadIntoTable(url, document.querySelector("#one"))
+                    }
+                }           
+            }   
+        // }
+    //-------------------------- Filter1 Functionality ends---------------------------//
+    
+    
+    
+    
+    //-------------------------- Filter2 Functionality starts---------------------------//
+        // window.onload = function(){
+        document.getElementById('filter_btn2').onclick = function fun2() {
+            
+            var x = document.forms['filter2']['since'].value;
+            var y = document.forms['filter2']['till'].value;
+    
+            var url = "http://iot.ccnet.in:1313/query/2/?since=" + x + "&till=" + y;
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.send();
+            
+            xhr.onreadystatechange = processRequest;
+            
+            function processRequest(e) {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var response1 = JSON.parse(xhr.responseText);
+                    loadIntoTable(url, document.querySelector("#two"))
+                }
+            }           
+        }   
+    // }
+    //-------------------------- Filter2 Functionality ends---------------------------//
+    
+    
+    //-------------------------- Filter3 Functionality starts---------------------------//
+        document.getElementById('filter_btn3').onclick = function fun3() {
+    
+        var x = document.forms['filter3']['date'].value;
+    
+        var url = "http://iot.ccnet.in:1313/query/9/?date=" + x;
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.send();
+    
+        xhr.onreadystatechange = processRequest;
+    
+        function processRequest(e) {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var response1 = JSON.parse(xhr.responseText);
+                loadIntoTable(url, document.querySelector("#three"))
+            }
+        }           
+        }   
+    //-------------------------- Filter3 Functionality ends---------------------------//
+    
+    
+    //-------------------------- Button clicks starts---------------------------//
+    
+        const button4 = document.querySelector('#btn4')
+        button4.addEventListener('click', ()=> loadIntoTable('http://iot.ccnet.in:1313/query/11/',document.querySelector("#five")))
+    
+        const button3 = document.querySelector('#btn3')
+        button3.addEventListener('click', ()=> loadIntoTable('http://iot.ccnet.in:1313/query/1/',document.querySelector("#five")))
+    
+        const button2 = document.querySelector('#btn2')
+        button2.addEventListener('click', ()=> loadIntoTable('http://iot.ccnet.in:1313/query/5/',document.querySelector("#five")))
+    
+        const button1 = document.querySelector('#btn1')
+        button1.addEventListener('click', ()=> loadIntoTable('http://iot.ccnet.in:1313/query/4/',document.querySelector("#five")))
+    
+        //-------------------------- Button click ends---------------------------//
+        
+    
+    
+    
+    
+    // //-------------------------- Accordion Functionality starts---------------------------//
+    //     document.querySelectorAll('.acc_btn').forEach(button => {
+    //         button.addEventListener('click',()=> {
+    //             // const accContent = button.nextElementSibling;
+             
+    //             button.classList.toggle('acc_btn--active');
+    //         });
+    //     });  
+    //--------------------------- Accordion Functionality ends -------------------------//
+ 
+    
+    
+    </script>
+
+    <!-- Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
